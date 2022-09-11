@@ -55,5 +55,6 @@ body:
   id: aws_profile
   attributes:
     label: AWS Profile
+    placeholder: default
   validations:
     required: true
