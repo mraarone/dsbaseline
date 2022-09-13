@@ -1,12 +1,10 @@
 site_name: Data Science Baseline Project Template
 site_description: A project template and directory structure for Python data science projects.
-site_favicon: favicon.ico
 repo_url: https://github.com/mraarone/dsbaseline
 edit_uri: edit/master/docs/docs
 copyright: MIT Copyright.
-google_analytics: ['UA-54096005-4', 'auto']
 theme: cinder
 extra_css:
   - css/extra.css
-pages:
+nav:
   - Home: index.md

@@ -1,4 +1,4 @@
-.PHONY: clean data lint requirements sync_data_to_s3 sync_data_from_s3
+.PHONY: clean requirements test_template test_docs deploy_docs help
 
 #################################################################################
 # GLOBALS                                                                       #
@@ -13,14 +13,6 @@ PROJECT_NAME = {{ cookiecutter.repo_name }}
 # COMMANDS                                                                      #
 #################################################################################
 
-## Install Python Dependencies
-requirements: test_environment
-	poetry install
-
-## Make Dataset
-data: requirements
-	python3 src/data/make_dataset.py data/raw data/processed
-
 ## Delete all compiled Python files
 clean:
 	find . -type f -name "*.py[co]" -delete
@@ -30,33 +22,23 @@ clean:
 	find . -depth -type d -name ".pytest_cache" -exec rm -rf {} \;
 	find . -depth -type d -name ".pytype" -exec rm -rf {} \;
 
-## Lint using flake8
-test:
-	nox
-
-## Upload Data to S3
-sync_data_to_s3:
-ifeq (default,$(PROFILE))
-	aws s3 sync data/ s3://$(BUCKET)/data/
-else
-	aws s3 sync data/ s3://$(BUCKET)/data/ --profile $(PROFILE)
-endif
-
-## Download Data from S3
-sync_data_from_s3:
-ifeq (default,$(PROFILE))
-	aws s3 sync s3://$(BUCKET)/data/ data/
-else
-	aws s3 sync s3://$(BUCKET)/data/ data/ --profile $(PROFILE)
-endif
-
-## Set up python interpreter environment
-create_environment:
-	poetry shell
+## Install Python Dependencies
+requirements: test_template
+	python3 -m pip install -r requirements.txt
 
 ## Test python environment is setup correctly
-test_environment:
-	python3 tests/test_environment.py
+test_template: clean
+	pytest tests
+
+# Test mkdocs for the dsbaseline GitHub pages
+test_docs: requirements
+	cd docs
+	mkdocs serve
+
+# Use mkdocs to deploy the dsbaseline GitHub pages
+deploy_docs: requirements
+	cd docs
+	mkdocs gh-deploy --clean
 
 #################################################################################
 # PROJECT RULES                                                                 #

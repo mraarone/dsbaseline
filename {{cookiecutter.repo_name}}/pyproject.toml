@@ -16,6 +16,8 @@ flake8 = "^5.0.4"
 bandit = "^1.7.4"
 setuptools = "^65.3.0"
 nox-poetry = "^1.0.1"
+pre-commit = "^2.20.0"
+darglint = "^1.8.1"
 
 [tool.poetry.dev-dependencies]
 nox = "^2022.8.7"
@@ -27,6 +29,35 @@ coverage = "^6.4.4"
 pylint = "^2.15.0"
 flake8 = "^5.0.4"
 bandit = "^1.7.4"
+
+[tool.liccheck]
+authorized_licenses = [
+        "bsd",
+        "new bsd",
+        "bsd license",
+        "new bsd license",
+        "simplified bsd",
+        "apache",
+        "apache 2.0",
+        "apache software license",
+        "apache software",
+        "gnu lgpl",
+        "gnu lesser general public license v2 (lgplv2)",
+        "lgpl with exceptions or zpl",
+        "gnu general public license v2 (gplv2)",
+        "public domain",
+        "isc license",
+        "isc license (iscl)",
+        "mit",
+        "mit license",
+        "mozilla public license 2.0 (mpl 2.0)",
+        "python software foundation",
+        "python software foundation license",
+        "zpl 2.1"
+]
+unauthorized_licenses = [
+        "gpl v3"
+]
 
 [build-system]
 requires = ["poetry-core>=1.0.0"]

@@ -93,10 +93,12 @@ class TestCookieSetup(object):
             'reports',
             'reports/figures',
             'src',
-            'src/data',
-            'src/features',
-            'src/models',
-            'src/visualization',
+            'src/dsbaseline',
+            'src/dsbaseline/data',
+            'src/dsbaseline/features',
+            'src/dsbaseline/models',
+            'src/dsbaseline/visualization',
+            'tests'
         ]
 
         ignored_dirs = [
@@ -105,5 +107,5 @@ class TestCookieSetup(object):
 
         abs_expected_dirs = [str(self.path / d) for d in expected_dirs]
         abs_dirs, _, _ = list(zip(*os.walk(self.path)))
-        assert len(set(abs_expected_dirs + ignored_dirs) - set(abs_dirs)) == 0
 
+        assert len(set(abs_expected_dirs + ignored_dirs)) - len(set(abs_dirs)) == 0
