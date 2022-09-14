@@ -1,7 +1,7 @@
-{{cookiecutter.project_name}}
+{{ cookiecutter.project_name }}
 ==============================
 
-{{cookiecutter.description}}
+{{ cookiecutter.description }}
 
 Project Organization
 ------------
@@ -34,7 +34,7 @@ Project Organization
     ├── setup.py           <- makes project pip installable (pip install -e .) so src can be imported
     ├── src                <- Source code for use in this project.
     │   │
-    │   └── {{cookiecutter.repo_name}}      <- Project name generated from the dsbaseline template.
+    │   └── {{ cookiecutter.repo_name }}      <- Project name generated from the dsbaseline template.
     │       ├── __init__.py    <- Makes src a Python module
     │       │
     │       ├── data           <- Scripts to download or generate data

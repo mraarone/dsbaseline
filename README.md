@@ -96,7 +96,7 @@ The directory structure of your new project looks like this:
 │
 ├── setup.py           <- makes project pip installable (pip install -e .) so src can be imported
 ├── src                <- Source code for use in this project.
-│   └── {{cookiecutter.repo_name}}       <- Generated graphics and figures to be used in reporting
+│   └── {{ cookiecutter.repo_name }}       <- Generated graphics and figures to be used in reporting
 │       ├── __init__.py    <- Makes src a Python module
 │       │
 │       ├── data           <- Scripts to download or generate data
