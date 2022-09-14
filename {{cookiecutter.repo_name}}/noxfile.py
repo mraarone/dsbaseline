@@ -124,7 +124,7 @@ def pytest(session: Session) -> None:
     args = session.posargs or ["--cov", "-m", "not e2e"]
     session.install("pytest", "pytest-cov", "pytest-mock", "typeguard")
     session.run(
-        "pytest", "--cov", f"--typeguard-packages={packages}", *args, silent=False
+        "pytest", "--cov", "--cov-config=.coveragerc", f"--typeguard-packages={packages}", *args, silent=False
     )
 
 
