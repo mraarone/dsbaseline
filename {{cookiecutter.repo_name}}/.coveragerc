@@ -1,0 +1,13 @@
+[run]
+omit =
+    *__init__.py
+    tests/*
+    .nox/*
+    .venv/*
+    venv/*
+    virtualenv/*
+    **__main__
+[report]
+exclude_lines =
+    if __name__ == "__main__":
+    logging.
