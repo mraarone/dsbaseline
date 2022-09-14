@@ -7,7 +7,7 @@ from cookiecutter import main
 CCDS_ROOT = Path(__file__).parents[1].resolve()
 
 args = {
-	'author_name': 'dsbaseline',
+        'author_name': 'dsbaseline',
         'project_name': 'dsbaseline',
         'open_source_license': 'BSD-3'
        }
