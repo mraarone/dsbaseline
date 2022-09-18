@@ -3,7 +3,7 @@ on:
   issues:
     types: opened
 
-concurrency: 'main'
+concurrency: "main"
 
 jobs:
   setup:
@@ -29,7 +29,7 @@ jobs:
 
       - uses: actions/checkout@v2
         with:
-          # Comminting workflow files using the regular GITHUB_TOKEN will fail with 
+          # Comminting workflow files using the regular GITHUB_TOKEN will fail with
           # `Git Error: Refusing to allow a GitHub App to create or update workflow without workflows permission`.
           # This is by design to prevent third-parties from adding malicious workflow files.
           #
@@ -39,11 +39,11 @@ jobs:
 
       - uses: actions/setup-python@v2
         with:
-          python-version: '3.x'
+          python-version: "3.x"
 
       - name: Install dependencies
         run: pip install cookiecutter
-      
+
       - uses: stefanbuck/github-issue-praser@v2
         id: issue-parser
         with:
@@ -51,7 +51,10 @@ jobs:
 
       - name: Capturing issue as cookiecutter.json
         run: echo '${{ steps.issue-parser.outputs.jsonString }}' > cookiecutter.json
-      
+
+      - name: Merge cookiecutter.base with captured issue
+        run: jq -s '.[0] * .[1]' cookiecutter.json base.cookiecutter
+
       - name: Scaffolding repository
         # cookiecutter is command-line utility to create projects from templates
         # https://github.com/cookiecutter/cookiecutter
@@ -64,7 +67,7 @@ jobs:
 
       - name: Prepare root directory
         shell: bash
-        # Remove all files and folder exepct .git/ and cookiecutter-temp/
+        # Remove all files and folder except .git/ and cookiecutter-temp/
         run: |
           find ./ -maxdepth 1 \
           ! -name '.git' \
