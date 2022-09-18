@@ -13,13 +13,6 @@ body:
     required: true
     
 - type: input
-  id: repo_name
-  attributes:
-    label: Repo Name
-  validations:
-    required: true
-    
-- type: input
   id: author_name
   attributes:
     label: Author
@@ -48,6 +41,11 @@ body:
   id: s3_bucket
   attributes:
     label: S3 Bucket URI
+    description: |
+      You may not already have a bucket created, or not desire to use this, 
+      if that is the case, just type in a placeholder so you can continue 
+      setting up your project.
+    placeholder: s3://yourbucketname/
   validations:
     required: true
 
@@ -55,6 +53,10 @@ body:
   id: aws_profile
   attributes:
     label: AWS Profile
+    description: |
+      You may not already have a bucket created, or not desire to use this, 
+      if that is the case, just type in a placeholder so you can continue 
+      setting up your project.
     placeholder: default
   validations:
     required: true

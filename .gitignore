@@ -9,3 +9,7 @@
 {{cookiecutter.repo_name}}/docs/_build
 {{cookiecutter.repo_name}}/src/*.egg-info
 **/__pycache__
+**/.cache
+**/docs/build
+
+
