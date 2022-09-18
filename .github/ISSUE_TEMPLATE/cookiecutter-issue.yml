@@ -19,12 +19,19 @@ body:
   validations:
     required: true
 
-- type: input
-  id: description
-  attributes:
-    label: Description
-  validations:
-    required: true
+  - type: input
+    id: author_name
+    attributes:
+      label: Author
+    validations:
+      required: true
+
+  - type: input
+    id: description
+    attributes:
+      label: Description
+    validations:
+      required: true
 
 - type: dropdown
   id: open_source_license
@@ -36,7 +43,7 @@ body:
       - No license file
   validations:
     required: true
-
+    
 - type: input
   id: s3_bucket
   attributes:
