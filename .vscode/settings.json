@@ -1,0 +1,97 @@
+{
+  "cSpell.diagnosticLevel": "Hint",
+  "cSpell.enableFiletypes": ["terraform"],
+  "cSpell.language": "en-GB",
+  "dotfiles.repository": "https://github.com/mraarone/dotfiles.git",
+  "editor.accessibilitySupport": "off",
+  "editor.fontFamily": "'Fira Code', Menlo, Monaco, 'Courier New', monospace",
+  "editor.fontLigatures": true,
+  "editor.formatOnSave": true,
+  "editor.guides.bracketPairs": true,
+  "editor.minimap.enabled": false,
+  "editor.rulers": [80, 100, 120],
+  "editor.suggest.showWords": false,
+  "editor.tabSize": 2,
+  "explorer.fileNesting.patterns": {
+    "*.ts": "${capture}.js",
+    "*.js": "${capture}.js.map, ${capture}.min.js, ${capture}.d.ts",
+    "*.jsx": "${capture}.js",
+    "*.tsx": "${capture}.ts",
+    "tsconfig.json": "tsconfig.*.json",
+    "package.json": "package-lock.json, yarn.lock"
+  },
+  "files.associations": { "*.hcl": "terraform" },
+  "files.insertFinalNewline": true,
+  "files.trimFinalNewlines": true,
+  "files.trimTrailingWhitespace": true,
+  "gitlens.codeLens.scopes": ["blocks", "document", "containers"],
+  "gitlens.hovers.currentLine.over": "line",
+  "gitlens.views.fileHistory.files.compact": false,
+  "go.toolsManagement.autoUpdate": true,
+  "go.useLanguageServer": true,
+  "go.lintTool": "golangci-lint",
+  "go.lintFlags": ["--fast"],
+  "php.suggest.basic": false,
+  "php.validate.enable": false,
+  "prettier.printWidth": 120,
+  "python.formatting.provider": "black",
+  "remote.containers.dotfiles.repository": "https://github.com/mraarone/dotfiles.git",
+  "search.exclude": {
+    "**/.mypy_cache": true,
+    "bandit_baseline": true
+  },
+  "terminal.integrated.defaultProfile.linux": "zsh",
+  "terminal.integrated.scrollback": 10000,
+  "terminal.integrated.shellIntegration.enabled": true,
+  "terraform.languageServer": {
+    "external": true,
+    "args": ["serve"]
+  },
+  "window.autoDetectColorScheme": true,
+  "window.restoreWindows": "none",
+  "window.title": "${rootName}${separator}${activeFolderMedium}/${activeEditorShort}",
+  "window.zoomLevel": 1,
+  "workbench.editor.enablePreview": false,
+  "workbench.editor.untitled.labelFormat": "name",
+  "workbench.preferredLightColorTheme": "Solarized Light",
+  "workbench.preferredDarkColorTheme": "Tomorrow Night Blue",
+  "workbench.tree.indent": 12,
+  "zenMode.hideLineNumbers": false,
+  "[dockercompose]": {
+    "editor.defaultFormatter": "ms-azuretools.vscode-docker"
+  },
+  "[html]": {
+    "editor.defaultFormatter": "vscode.html-language-features"
+  },
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[jsonc]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[json]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[markdown]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[python]": {
+    "gitlens.codeLens.symbolScopes": ["!Module"],
+    "editor.wordBasedSuggestions": false,
+    "editor.tabSize": 4,
+    "editor.codeActionsOnSave": {
+      "source.organizeImports": true
+    }
+  },
+  "[svelte]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "terminal.integrated.enableMultiLinePasteWarning": false,
+  "editor.stickyScroll.enabled": true
+}
