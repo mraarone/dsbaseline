@@ -4,7 +4,7 @@
   "cSpell.language": "en-GB",
   "dotfiles.repository": "https://github.com/mraarone/dotfiles.git",
   "editor.accessibilitySupport": "off",
-  "editor.fontFamily": "'Fira Code', Menlo, Monaco, 'Courier New', monospace",
+  "editor.fontFamily": "'FuraCode NF', Menlo, Monaco, 'Courier New', monospace",
   "editor.fontLigatures": true,
   "editor.formatOnSave": true,
   "editor.guides.bracketPairs": true,
@@ -43,6 +43,7 @@
   "terminal.integrated.defaultProfile.linux": "zsh",
   "terminal.integrated.scrollback": 10000,
   "terminal.integrated.shellIntegration.enabled": true,
+  "terminal.fontFamily": "",
   "terraform.languageServer": {
     "external": true,
     "args": ["serve"]
