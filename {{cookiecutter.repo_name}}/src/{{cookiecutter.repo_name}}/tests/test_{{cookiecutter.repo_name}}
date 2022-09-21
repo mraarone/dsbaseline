@@ -1,0 +1,24 @@
+"""Tests for the {{ cookiecutter.repo_name }} module."""
+import pytest
+
+from {{ cookiecutter.repo_name }} import {{ cookiecutter.repo_name }}
+
+
+# Fixture example
+@pytest.fixture
+def an_object():
+    return {}
+
+
+def test_something():
+    assert True
+
+
+def test_with_error():
+    with pytest.raises(ValueError):
+        # Do something that raises a ValueError
+        raise(ValueError)
+
+
+def test_{{ cookiecutter.repo_name }}(an_object):
+    assert an_object == {}
