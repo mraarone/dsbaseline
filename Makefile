@@ -30,12 +30,12 @@ requirements: test_template
 test_template: clean
 	pytest tests
 
-# Test mkdocs for the dsbaseline GitHub pages
+## Test mkdocs for the dsbaseline GitHub pages
 test_docs: requirements
 	cd docs
 	mkdocs serve
 
-# Use mkdocs to deploy the dsbaseline GitHub pages
+## Use mkdocs to deploy the dsbaseline GitHub pages
 deploy_docs: requirements
 	cd docs
 	mkdocs gh-deploy --clean
