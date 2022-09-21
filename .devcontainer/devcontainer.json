@@ -11,6 +11,7 @@
   "features": {
 //    "common-utils": "latest",
 //    "nvidia-cuda",
+    "node": "latest",
     "java": "latest",
     "aws-cli": "latest",
 //    "azure-cli": "latest",
