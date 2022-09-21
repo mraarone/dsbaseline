@@ -66,7 +66,13 @@
     "git.ignoreRebaseWarning": true,
     "terminal.integrated.allowMnemonics": true,
     "window.zoomLevel": 1,
-    "editor.fontFamily": "'FuraMono NF', Menlo, Consolas, 'Courier New', monospace",
-    "terminal.integrated.shellIntegration.enabled": false,
-    "terminal.integrated.fontFamily": "FuraMono NF, Menlo, Consolas, 'Courier New', monospace"
+    "editor.fontFamily": "FuraMono NF, Menlo, Consolas, 'Courier New', monospace",
+    "terminal.integrated.shellIntegration.enabled": true,
+    "terminal.integrated.fontFamily": "FuraMono NF, Menlo, Consolas, 'Courier New', monospace",
+    "terminal.integrated.fontSize": 11,
+    "python.testing.pytestArgs": [
+        "tests"
+    ],
+    "python.testing.unittestEnabled": false,
+    "python.testing.pytestEnabled": true
 }
