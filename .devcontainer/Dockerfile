@@ -1,6 +1,6 @@
 # [Choice] Pypy version: 2, 3
 ARG VARIANT="3"
-FROM pypy:${VARIANT}
+FROM python:${VARIANT}
 
 # Use the [Option] comment to specify true/false arguments that should appear in VS Code UX
 #
