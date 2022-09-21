@@ -9,15 +9,20 @@
   },
 
   "features": {
+//    "common-utils": "latest",
+//    "nvidia-cuda",
     "java": "latest",
-    "awscli": "latest",
-    "azcli": "latest",
+    "aws-cli": "latest",
+    "azure-cli": "latest",
     "desktop-lite": "latest",
-    "docker": "latest",
+//    "docker": "latest",
+//    "docker-from-docker": "latest",
+//    "docker-in-docker": "latest",
+//    "docker-compose": "latest",
     "git-lfs": "latest",
-    "github": "latest",
+    "github-cli": "latest",
     "jupyterlab": "latest",
-    "kubectl-helm": "latest",
+    "kubectl-helm-minikube": "latest",
     "terraform": "latest"
   },
 
