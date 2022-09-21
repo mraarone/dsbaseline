@@ -2,7 +2,7 @@
 name = "dsbaseline"
 version = "0.1.0"
 description = ""
-authors = ["mraarone <mraarone@yahoo.com>"]
+authors = ["{{cookiecutter.author_name}} <{{cookiecutter.author_email}}>"]
 license = "MIT"
 
 [tool.poetry.dependencies]
