@@ -22,14 +22,14 @@ body:
 - type: input
   id: author_name
   attributes:
-    label: Author
+    label: Author Name
   validations:
     required: true
     
 - type: input
   id: author_email
   attributes:
-    label: Author
+    label: Author Email
   validations:
     required: true
 
