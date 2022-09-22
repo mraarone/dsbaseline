@@ -10,10 +10,6 @@ Run <kbd>F1</kbd> / <kbd>Ctrl/Cmd</kbd> + <kbd>Shift</kbd> + <kbd>p</kbd> and se
 
 If you already have VS Code and Docker installed, you can click the badge above or [here](https://vscode.dev/redirect?url=vscode://ms-vscode-remote.remote-containers/cloneInVolume?url=https://github.com/mraarone/dsbaseline) to get started. Clicking these links will cause VS Code to automatically install the Remote - Containers extension if needed, clone the source code into a container volume, and spin up a dev container for use.
 
-<<<<<<< HEAD
 ## References
 
-Dev container definitions can be found [under the `/containers` folder](https://github.com/microsoft/vscode-dev-containers/tree/main/containers) in this repository.
-=======
 Microsoft/GitHub's awesome dev container definitions can be found [under the `/containers` folder](https://github.com/microsoft/vscode-dev-containers/tree/main/containers) in this repository.
->>>>>>> 1ef03d1cd50b15acef731957addd83ab22af7bfd

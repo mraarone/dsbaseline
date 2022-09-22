@@ -3,33 +3,33 @@
 
   // Update the 'dockerFile' property if you aren't using the standard 'Dockerfile' filename.
   "build": {
-    "dockerfile": "Dockerfile",
+    "dockerfile": "Dockerfile"
 
     // [Optional] You can use build args to set options. e.g. 'VARIANT' below affects the Python image in the Dockerfile
-    "args": { "VARIANT": "3" }
+    //"args": { "VARIANT": "3" }
   },
 	"runArgs": [
-		"--shm-size=1g"
+    "--shm-size=1g"
 	],
 
-  "features": {
-//    "common-utils": "latest",
-//    "nvidia-cuda",
-    "node": "latest",
-    "java": "latest",
-    "aws-cli": "latest",
-//    "azure-cli": "latest",
-    "desktop-lite": "latest",
-//    "docker": "latest",
-//    "docker-from-docker": "latest",
-    "docker-in-docker": "latest",
-//    "docker-compose": "latest",
-    "git-lfs": "latest",
-    "github-cli": "latest",
-//    "jupyterlab": "latest",
-    "kubectl-helm-minikube": "latest",
-    "terraform": "latest"
-  },
+//  "features": {
+////    "common-utils": "latest",
+//    "docker-in-docker": "latest",
+////    "nvidia-cuda",
+//    "node": "latest",
+////    "aws-cli": "latest",
+////    "azure-cli": "latest",
+//    "desktop-lite": "latest",
+////    "docker": "latest",
+////    "docker-from-docker": "latest",
+////    "docker-compose": "latest",
+//    "git-lfs": "latest",
+//    "github-cli": "latest",
+////    "jupyterlab": "latest",
+//    "java": "latest"
+////    "kubectl-helm-minikube": "latest",
+////    "terraform": "latest"
+//  },
 
   // Configure tool-specific properties.
   "customizations": {
@@ -71,7 +71,7 @@
 	"overrideCommand": false,
 	"hostRequirements": {
 		"memory": "6gb"
-	}
+	},
   // Comment out to connect as root instead. To add a non-root user, see: https://aka.ms/vscode-remote/containers/non-root.
   "remoteUser": "vscode"
 }
