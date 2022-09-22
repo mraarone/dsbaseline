@@ -1,12 +1,16 @@
 {
-  "name": "PyPy (Community)",
+  "name": "DSBaseline (Community)",
 
   // Update the 'dockerFile' property if you aren't using the standard 'Dockerfile' filename.
   "build": {
     "dockerfile": "Dockerfile",
-    // [Optional] You can use build args to set options. e.g. 'VARIANT' below affects the image in the Dockerfile
+
+    // [Optional] You can use build args to set options. e.g. 'VARIANT' below affects the Python image in the Dockerfile
     "args": { "VARIANT": "3" }
   },
+	"runArgs": [
+		"--shm-size=1g"
+	],
 
   "features": {
 //    "common-utils": "latest",
@@ -53,12 +57,21 @@
     }
   },
 
-  // Use 'forwardPorts' to make a list of ports inside the container available locally.
-  // "forwardPorts": [],
-
-  // Use 'postCreateCommand' to run commands after the container is created.
-  // "postCreateCommand": "uname -a",
-
+	"forwardPorts": [6080],
+	"portsAttributes": {
+		"6080": {
+			"label": "Desktop access (password: vscode)",
+			"onAutoForward": "silent"
+		},
+		"5901": {
+			"label": "VNC TCP port (password: vscode)",
+			"onAutoForward": "silent"
+		}
+	},
+	"overrideCommand": false,
+	"hostRequirements": {
+		"memory": "6gb"
+	}
   // Comment out to connect as root instead. To add a non-root user, see: https://aka.ms/vscode-remote/containers/non-root.
   "remoteUser": "vscode"
 }
