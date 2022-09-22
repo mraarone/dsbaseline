@@ -1,62 +1,109 @@
+#!/bin/sh
+
 .PHONY: clean data lint requirements sync_data_to_s3 sync_data_from_s3
+
+.DEFAULT_GOAL := help
 
 #################################################################################
 # GLOBALS                                                                       #
 #################################################################################
 
+POETRY := $(shell command -v poetry 2> /dev/null)
 PROJECT_DIR := $(shell dirname $(realpath $(lastword $(MAKEFILE_LIST))))
-BUCKET = {{ cookiecutter.s3_bucket }}
-PROFILE = {{ cookiecutter.aws_profile }}
-PROJECT_NAME = {{ cookiecutter.repo_name }}
+BUCKET = test1
+PROFILE = default
+PROJECT_NAME = test1
 
 #################################################################################
 # COMMANDS                                                                      #
 #################################################################################
 
+## Test python environment is setup correctly
+test_environment:
+	@if [ -z ${POETRY_ACTIVE} ]; then \
+		echo "Makefile: Test for Poetry shell: Poetry shell not currently active."; \
+		echo "Makefile: Executing tests/test_environment.py..."; \
+		\
+		python3 tests/test_environment.py 2> /dev/null; \
+		EXITCODE=$$?; \
+		\
+		if [ "$$EXITCODE" -eq 0 ]; then echo "Executed tests/test_environment.py: SUCCESS"; \
+		else echo "Makefile: Executed tests/test_environment.py: FAILURE" && exit 1; \
+		fi \
+	else echo "Makefile: Test for Poetry shell: Poetry shell active, environment test not needed."; \
+	fi
+
 ## Install Python Dependencies
-requirements: test_environment
-	poetry install
+install: test_environment
+	@if [ -z "$(POETRY)" ]; then \
+		echo "Makefile: Poetry is not installed, installing poetry..."; \
+		\
+		pip install poetry 2> /dev/null; \
+		EXITCODE=$$?; \
+		\
+		if [ "$$EXITCODE" -eq 0 ]; then echo "Poetry installed: SUCCESS"; \
+		else echo "Makefile: Executed tests/test_environment.py: FAILURE" && exit 2; \
+		fi \
+	else echo "Makefile: Test for Poetry: Poetry is already installed."; \
+	fi
+
+	echo "Makefile: Installing dependencies..."
+	@$(POETRY) install
 
 ## Make Dataset
-data: requirements
-	python3 src/data/make_dataset.py data/raw data/processed
+data: install
+	@echo "Processing data from data/raw to data/processed..."
+	@$(POETRY) run python3 src/data/make_dataset.py data/raw data/processed
 
 ## Delete all compiled Python files
 clean:
-	find . -type f -name "*.py[co]" -delete
-	find . -type d -name "__pycache__" -delete
-	find . -depth -type d -name ".mypy_cache" -exec rm -rf {} \;
-	find . -depth -type d -name ".nox" -exec rm -rf {} \;
-	find . -depth -type d -name ".pytest_cache" -exec rm -rf {} \;
-	find . -depth -type d -name ".pytype" -exec rm -rf {} \;
+	@echo "Cleaning the project of temporary files..."
+	@find . -type f -name "*.py[co]" -delete
+	@find . -depth -type d -name "__pycache__" -exec rm -rf {} \;
+	@find . -depth -type d -name ".mypy_cache" -exec rm -rf {} \;
+	@find . -depth -type d -name ".nox" -exec rm -rf {} \;
+	@find . -depth -type d -name ".pytest_cache" -exec rm -rf {} \;
+	@find . -depth -type d -name ".pytype" -exec rm -rf {} \;
 
 ## Lint using flake8
-test:
-	nox
+test_nox: install
+	echo "Running nox (this will take possibly 20 minutes)..."
+	@$(POETRY) run nox
 
 ## Upload Data to S3
-sync_data_to_s3:
+sync_data_to_s3: install
 ifeq (default,$(PROFILE))
-	aws s3 sync data/ s3://$(BUCKET)/data/
+	@echo "Syncing data to S3 using default profile..."
+	@$(POETRY) run aws s3 sync data/ s3://$(BUCKET)/data/
 else
-	aws s3 sync data/ s3://$(BUCKET)/data/ --profile $(PROFILE)
+	@echo "Syncing data to S3 using $(PROFILE) profile..."
+	@$(POETRY) run aws s3 sync data/ s3://$(BUCKET)/data/ --profile $(PROFILE)
 endif
 
 ## Download Data from S3
-sync_data_from_s3:
+sync_data_from_s3: install
 ifeq (default,$(PROFILE))
-	aws s3 sync s3://$(BUCKET)/data/ data/
+	@echo "Syncing data from S3 using default profile..."
+	$(POETRY) run aws s3 sync s3://$(BUCKET)/data/ data/
 else
-	aws s3 sync s3://$(BUCKET)/data/ data/ --profile $(PROFILE)
+	@echo "Syncing data from S3 using $(PROFILE) profile..."
+	$(POETRY) run aws s3 sync s3://$(BUCKET)/data/ data/ --profile $(PROFILE)
 endif
 
-## Set up python interpreter environment
-create_environment:
-	poetry shell
+## Set up the shell to the poetry virtual environment
+create_environment: test_environment
+	@if [ -z "$(POETRY_ACTIVE)" ]; then \
+		$(POETRY) shell; \
+		echo "Type 'exit' to leave poetry's shell."; \
+	else echo "Poetry is already active."; \
+	fi
 
-## Test python environment is setup correctly
-test_environment:
-	python3 tests/test_environment.py
+## Exit the poetry shell
+exit_environment:
+	@if [ -z "$(POETRY_ACTIVE)" ]; then \
+		echo "Poetry isn't active."; \
+	else echo "Type 'exit' to exit the Poetry environment."; \
+	fi
 
 #################################################################################
 # PROJECT RULES                                                                 #

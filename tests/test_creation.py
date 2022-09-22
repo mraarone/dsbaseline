@@ -1,5 +1,7 @@
 import os
+import sh
 import pytest
+
 from subprocess import check_output
 from conftest import system_check
 
@@ -113,8 +115,8 @@ class TestCookieSetup(object):
     def test_nox_mypy(self):
         noxfile_path = self.path / 'noxfile.py'
         assert noxfile_path.exists()
-        assert no_curlies(reqs_path)
-        
+        assert no_curlies(noxfile_path)
+
         try:
             # run the shell command
             sh.python(['nox', '-s', 'mypy'])
