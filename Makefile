@@ -16,7 +16,7 @@ PROJECT_NAME = {{ cookiecutter.repo_name }}
 ## Delete all compiled Python files
 clean:
 	find . -type f -name "*.py[co]" -delete
-	find . -type d -name "__pycache__" -delete
+	find . -depth -type d -name "__pycache__" -exec rm -rf {} \;
 	find . -depth -type d -name ".mypy_cache" -exec rm -rf {} \;
 	find . -depth -type d -name ".nox" -exec rm -rf {} \;
 	find . -depth -type d -name ".pytest_cache" -exec rm -rf {} \;
