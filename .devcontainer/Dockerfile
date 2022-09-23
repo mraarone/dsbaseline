@@ -31,6 +31,9 @@ ARG INSTALL_ZSH="true"
 # [Option] Upgrade OS packages to their latest versions
 ARG UPGRADE_PACKAGES="true"
 
+# Install install.sh
+RUN apt-get update && bash /tmp/library-scripts/install.sh
+
 # Install common-debian.sh
 ARG USERNAME=vscode
 ARG USER_UID=1000
@@ -63,7 +66,6 @@ RUN apt-get update && bash /tmp/library-scripts/git-lfs-debian.sh
 # Install github-debian.sh
 RUN apt-get update && bash /tmp/library-scripts/github-debian.sh
 
-# Install install.sh
 # Install java-debian.sh
 RUN bash /tmp/library-scripts/java-debian.sh
 
