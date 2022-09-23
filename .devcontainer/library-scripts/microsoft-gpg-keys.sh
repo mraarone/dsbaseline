@@ -12,4 +12,4 @@ apt-get update
 apt-get -y install code code-insiders
 
 # Update debian gpg keys
-for i in `sudo apt-get -qq update 2>&1 | sed 's/.*PUBKEY //'`; do sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys $i; done
+for i in `apt-get -qq update 2>&1 | sed 's/.*PUBKEY //'`; do apt-key adv --keyserver keyserver.ubuntu.com --recv-keys $i; done
