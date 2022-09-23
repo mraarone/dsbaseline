@@ -23,7 +23,7 @@ ARG VARIANT=3-bullseye
 FROM python:${VARIANT}
 
 # Copy library scripts to execute
-COPY .devcontainer/library-scripts/*.sh .devcontainer/library-scripts/*.env /tmp/library-scripts/
+COPY library-scripts/*.sh library-scripts/*.env /tmp/library-scripts/
 
 # [Option] Install zsh
 ARG INSTALL_ZSH="true"
