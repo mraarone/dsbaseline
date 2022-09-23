@@ -9,7 +9,7 @@ FROM mcr.microsoft.com/vscode/devcontainers/repos/microsoft/vscode:latest
 # COPY fluxbox/* /tmp/fluxbox/
 
 #RUN /bin/bash -c "for f in /tmp/library-scripts/*.sh; do /bin/bash $f; done; apt-get autoremove -y && apt-get clean -y && rm -rf /var/lib/apt/lists/* /tmp/library-scripts/ /tmp/fluxbox/"
-RUN /bin/bash common-debian.sh && apt-get autoremove -y && apt-get clean -y && rm -rf /var/lib/apt/lists/* /tmp/library-scripts/ /tmp/fluxbox/
+RUN /bin/bash library-scripts/common-debian.sh && apt-get autoremove -y && apt-get clean -y && rm -rf /var/lib/apt/lists/* /tmp/library-scripts/ /tmp/fluxbox/
 
 # [Optional] Uncomment this section to install additional OS packages.
 # RUN apt-get update && export DEBIAN_FRONTEND=noninteractive \
