@@ -13,7 +13,7 @@
   ],
   // "overrideCommand": false,
 
-  "postCreateCommand": "/bin/bash postCreateCommand.sh",
+  "postCreateCommand": "bash postCreateCommand.sh",
 
   // Configure tool-specific properties.
   "customizations": {

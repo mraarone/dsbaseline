@@ -43,7 +43,7 @@ RUN apt-get update && export DEBIAN_FRONTEND=noninteractive \
 
 # Install python-debian.sh. Setup default python tools in a venv via pipx to avoid conflicts
 ENV PIPX_HOME=/usr/local/py-utils
-    PIPX_BIN_DIR=/usr/local/py-utils/bin
+ENV PIPX_BIN_DIR=/usr/local/py-utils/bin
 ENV PATH=${PATH}:${PIPX_BIN_DIR}
 RUN bash /tmp/library-scripts/python-debian.sh "none" "/usr/local" "${PIPX_HOME}" "${USERNAME}" 
 
@@ -51,14 +51,22 @@ RUN bash /tmp/library-scripts/python-debian.sh "none" "/usr/local" "${PIPX_HOME}
 RUN bash /tmp/library-scripts/awscli-debian.sh
 
 # Install node-debian.sh
+RUN bash /tmp/library-scripts/node-debian.sh
+
 # Install desktop-lite-debian.sh
+RUN bash /tmp/library-scripts/desktop-lite-debian.sh
+
 # Install docker-in-docker.sh
 # Install git-lfs-debian.sh
+RUN apt-get update && bash /tmp/library-scripts/git-lfs-debian.sh
+
 # Install github-debian.sh
+RUN apt-get update && bash /tmp/library-scripts/github-debian.sh
+
 # Install install.sh
 # Install java-debian.sh
 RUN bash /tmp/library-scripts/java-debian.sh
 
 # Clean up
-RUN bash apt-get autoremove -y && apt-get clean -y \
-    && rm -rf /var/lib/apt/lists/* /tmp/library-scripts/ /tmp/fluxbox/
+RUN apt-get autoremove -y && apt-get clean -y
+RUN rm -rf /var/lib/apt/lists/* /tmp/library-scripts/ /tmp/fluxbox/
