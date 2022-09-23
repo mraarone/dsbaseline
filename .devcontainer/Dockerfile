@@ -3,8 +3,6 @@
 # # FROM python:${VARIANT}
 # FROM mcr.microsoft.com/vscode/devcontainers/repos/microsoft/vscode:latest
 
-# # ENV DONT_PROMPT_WSL_INSTALL=true
-
 # COPY library-scripts/*.sh library-scripts/*.env /tmp/library-scripts/
 # # COPY fluxbox/* /tmp/fluxbox/
 
@@ -16,14 +14,9 @@
 # # RUN apt-get update && export DEBIAN_FRONTEND=noninteractive \
 # #     && apt-get -y install --no-install-recommends <your-package-list-here>
 
-
-
 # [Choice] Python version (use -bullseye variants on local arm64/Apple Silicon): 3, 3.10, 3.9, 3.8, 3.7, 3.6, 3-bullseye, 3.10-bullseye, 3.9-bullseye, 3.8-bullseye, 3.7-bullseye, 3.6-bullseye, 3-buster, 3.10-buster, 3.9-buster, 3.8-buster, 3.7-buster, 3.6-buster
 ARG VARIANT=3-bullseye
 FROM python:${VARIANT}
-
-# Copy library scripts to execute
-COPY library-scripts/*.sh library-scripts/*.env /tmp/library-scripts/
 
 # [Option] Install zsh
 ARG INSTALL_ZSH="true"
@@ -31,8 +24,13 @@ ARG INSTALL_ZSH="true"
 # [Option] Upgrade OS packages to their latest versions
 ARG UPGRADE_PACKAGES="true"
 
-# Install install.sh
-RUN apt-get update && bash /tmp/library-scripts/install.sh
+ENV DONT_PROMPT_WSL_INSTALL=true
+
+# Copy library scripts to execute
+COPY library-scripts/*.sh library-scripts/*.env /tmp/library-scripts/
+
+# Install microsoft-gpg-keys.sh
+RUN apt-get update && bash /tmp/library-scripts/microsoft-gpg-keys.sh
 
 # Install common-debian.sh
 ARG USERNAME=vscode
