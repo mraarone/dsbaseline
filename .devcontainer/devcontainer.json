@@ -11,8 +11,9 @@
   "runArgs": [
     "--shm-size=1g"
   ],
+  // "overrideCommand": false,
 
-  // "postCreateCommand": "/bin/bash postCreateCommand.sh",
+  "postCreateCommand": "/bin/bash postCreateCommand.sh",
 
   // Configure tool-specific properties.
   "customizations": {
@@ -55,8 +56,6 @@
 			"onAutoForward": "silent"
 		}
 	},
-
-  "overrideCommand": false,
 
   "hostRequirements": {
 		"memory": "6gb"
