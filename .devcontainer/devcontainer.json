@@ -8,28 +8,11 @@
     // [Optional] You can use build args to set options. e.g. 'VARIANT' below affects the Python image in the Dockerfile
     //"args": { "VARIANT": "3" }
   },
-	"runArgs": [
+  "runArgs": [
     "--shm-size=1g"
 	],
 
-//  "features": {
-////    "common-utils": "latest",
-//    "docker-in-docker": "latest",
-////    "nvidia-cuda",
-//    "node": "latest",
-////    "aws-cli": "latest",
-////    "azure-cli": "latest",
-//    "desktop-lite": "latest",
-////    "docker": "latest",
-////    "docker-from-docker": "latest",
-////    "docker-compose": "latest",
-//    "git-lfs": "latest",
-//    "github-cli": "latest",
-////    "jupyterlab": "latest",
-//    "java": "latest"
-////    "kubectl-helm-minikube": "latest",
-////    "terraform": "latest"
-//  },
+  "postCreateCommand": "/bin/bash .devcontainer/postCreateCommand.sh",
 
   // Configure tool-specific properties.
   "customizations": {
@@ -53,11 +36,15 @@
       },
 
       // Add the IDs of extensions you want installed when the container is created.
-      "extensions": ["ms-python.python", "ms-python.vscode-pylance"]
+      "extensions": [
+        "ms-python.python", 
+        "ms-python.vscode-pylance"
+      ]
     }
   },
 
 	"forwardPorts": [6080],
+
 	"portsAttributes": {
 		"6080": {
 			"label": "Desktop access (password: vscode)",
@@ -68,10 +55,12 @@
 			"onAutoForward": "silent"
 		}
 	},
-	"overrideCommand": false,
-	"hostRequirements": {
+
+  "overrideCommand": false,
+
+  "hostRequirements": {
 		"memory": "6gb"
 	},
-  // Comment out to connect as root instead. To add a non-root user, see: https://aka.ms/vscode-remote/containers/non-root.
-  "remoteUser": "node"
+
+  "remoteUser": "vscode"
 }
