@@ -180,8 +180,21 @@ fi
 echo "Downloading github CLI..."
 # Import key safely (new method rather than deprecated apt-key approach) and install
 . /etc/os-release
-receive_gpg_keys GITHUB_CLI_ARCHIVE_GPG_KEY /usr/share/keyrings/githubcli-archive-keyring.gpg
-echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/githubcli-archive-keyring.gpg] https://cli.github.com/packages stable main" > /etc/apt/sources.list.d/github-cli.list
+
+# Old
+#receive_gpg_keys GITHUB_CLI_ARCHIVE_GPG_KEY /usr/share/keyrings/githubcli-archive-keyring.gpg
+
+# New since 2/21/2022 as per https://github.com/cli/cli/blob/trunk/docs/install_linux.md - "Aaron Elliott" <mraarone@yahoo.com>
+curl -fsSL https://cli.github.com/packages/githubcli-archive-keyring.gpg | sudo dd of=/usr/share/keyrings/githubcli-archive-keyring.gpg \
+
+# Old
+#echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/githubcli-archive-keyring.gpg] https://cli.github.com/packages stable main" > /etc/apt/sources.list.d/github-cli.list
+
+# New since 2/21/2022 as per https://github.com/cli/cli/blob/trunk/docs/install_linux.md - "Aaron Elliott" <mraarone@yahoo.com>
+echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/githubcli-archive-keyring.gpg] https://cli.github.com/packages stable main" | tee /etc/apt/sources.list.d/github-cli.list
+chmod go+r /usr/share/keyrings/githubcli-archive-keyring.gpg
+
+# Same
 apt-get update
 apt-get -y install "gh${version_suffix}"
 rm -rf "/tmp/gh/gnupg"
