@@ -11,5 +11,5 @@
 **/__pycache__
 **/.cache
 **/docs/build
-**/.log
+**/*.log
 
