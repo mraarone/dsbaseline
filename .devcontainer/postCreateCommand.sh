@@ -1,5 +1,8 @@
 #!/usr/bin/env bash
 
+# 
+sleep 1000
+
 # # Setup Fluxbox menus
 # mkdir -p /root/.fluxbox /home/vscode/.fluxbox
 # cp -f /tmp/fluxbox/* /root/.fluxbox/

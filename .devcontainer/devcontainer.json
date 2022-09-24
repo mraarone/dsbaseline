@@ -16,9 +16,9 @@
 		"source=minikube-var-lib-docker,target=/var/lib/docker,type=volume",
 		"source=minikube-config,target=/home/vscode/.minikube,type=volume"
 	],
-    // "overrideCommand": false,
+//  "overrideCommand": false, // +postCreateCommand, this line that does a sleep 1000 fails load
   "postCreateCommand": ".devcontainer/postCreateCommand.sh",
-  "postStartCommand": "nohup bash -c 'minikube start &' > minikube.log 2>&1",
+  "postStartCommand": "minikube start &' > minikube.log 2>&1",
 
   // Configure tool-specific properties.
   "customizations": {
