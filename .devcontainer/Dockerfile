@@ -48,14 +48,14 @@ ENV PIPX_BIN_DIR=/usr/local/py-utils/bin
 ENV PATH=${PATH}:${PIPX_BIN_DIR}
 RUN bash /tmp/library-scripts/python-debian.sh "none" "/usr/local" "${PIPX_HOME}" "${USERNAME}" 
 
-# Install awscli-debian.sh.
-RUN bash /tmp/library-scripts/awscli-debian.sh
+# Install sshd-debian.sh
+RUN apt-get update && bash /tmp/library-scripts/sshd-debian.sh
 
 # Install node-debian.sh
-RUN bash /tmp/library-scripts/node-debian.sh
+RUN apt-get update && bash /tmp/library-scripts/node-debian.sh
 
-# Install desktop-lite-debian.sh
-RUN bash /tmp/library-scripts/desktop-lite-debian.sh
+# Install java-debian.sh
+RUN apt-get update && bash /tmp/library-scripts/java-debian.sh
 
 # Install git-lfs-debian.sh
 RUN apt-get update && bash /tmp/library-scripts/git-lfs-debian.sh
@@ -63,11 +63,14 @@ RUN apt-get update && bash /tmp/library-scripts/git-lfs-debian.sh
 # Install github-debian.sh
 RUN apt-get update && bash /tmp/library-scripts/github-debian.sh
 
-# Install java-debian.sh
-RUN apt-get update && bash /tmp/library-scripts/java-debian.sh
+# Install awscli-debian.sh.
+RUN apt-get update && bash /tmp/library-scripts/awscli-debian.sh
 
 # Install docker-in-docker.sh
 RUN apt-get update && bash /tmp/library-scripts/docker-in-docker-debian.sh
+
+# Install desktop-lite-debian.sh
+RUN bash /tmp/library-scripts/desktop-lite-debian.sh
 
 # Install kubectl-helm-minikube.sh
 RUN apt-get update && \
