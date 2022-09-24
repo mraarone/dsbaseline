@@ -5,7 +5,7 @@
 # cp -f /tmp/fluxbox/* /root/.fluxbox/
 # cp -f /tmp/fluxbox/* /home/vscode/.fluxbox/
 # chown -R vscode:vscode /home/vscode/.fluxbox
-[[ -z /etc/zsh/zshrc ]] && mkdir --parent /zsh/zshrc && touch /etc/zsh/zshrc
+[[ -z /etc/zsh/zshrc ]] && mkdir --parent /etc/zsh/zshrc && touch /etc/zsh/zshrc
 echo "export DONT_PROMPT_WSL_INSTALL=true" | tee -a /etc/bash.bashrc >> /etc/zsh/zshrc >> /etc/profile.d/not-wsl.sh
 
 # Fluxbox: Install firefox for fluxbox
