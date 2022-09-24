@@ -76,3 +76,11 @@ RUN apt-get update && \
 # Clean up
 RUN apt-get autoremove -y && apt-get clean -y
 RUN rm -rf /var/lib/apt/lists/* /tmp/library-scripts/ /tmp/fluxbox/
+
+VOLUME [ "/var/lib/docker" ]
+
+# Setting the ENTRYPOINT to docker-init.sh will start up the Docker Engine 
+# inside the container "overrideCommand": false is set in devcontainer.json. 
+# The script will also execute CMD if you need to alter startup behaviors.
+ENTRYPOINT [ "/usr/local/share/docker-init.sh" ]
+CMD [ "sleep", "infinity" ]
