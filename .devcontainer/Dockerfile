@@ -57,7 +57,6 @@ RUN bash /tmp/library-scripts/node-debian.sh
 # Install desktop-lite-debian.sh
 RUN bash /tmp/library-scripts/desktop-lite-debian.sh
 
-# Install docker-in-docker.sh
 # Install git-lfs-debian.sh
 RUN apt-get update && bash /tmp/library-scripts/git-lfs-debian.sh
 
@@ -65,7 +64,14 @@ RUN apt-get update && bash /tmp/library-scripts/git-lfs-debian.sh
 RUN apt-get update && bash /tmp/library-scripts/github-debian.sh
 
 # Install java-debian.sh
-RUN bash /tmp/library-scripts/java-debian.sh
+RUN apt-get update && bash /tmp/library-scripts/java-debian.sh
+
+# Install docker-in-docker.sh
+RUN apt-get update && bash /tmp/library-scripts/docker-in-docker-debian.sh
+
+# Install kubectl-helm-minikube.sh
+RUN apt-get update && \
+    bash /tmp/library-scripts/kubectl-helm-minikube-debian.sh "latest" "latest" "latest"
 
 # Clean up
 RUN apt-get autoremove -y && apt-get clean -y

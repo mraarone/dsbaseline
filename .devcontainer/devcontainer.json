@@ -9,11 +9,16 @@
     //"args": { "VARIANT": "3" }
   },
   "runArgs": [
-    "--shm-size=1g"
+    "--shm-size=1g",
+    "--privileged"
   ],
-  // "overrideCommand": false,
-
+	"mounts": [
+		"source=minikube-var-lib-docker,target=/var/lib/docker,type=volume",
+		"source=minikube-config,target=/home/vscode/.minikube,type=volume"
+	],
+    // "overrideCommand": false,
   "postCreateCommand": ".devcontainer/postCreateCommand.sh",
+  "postStartCommand": "nohup bash -c 'minikube start &' > minikube.log 2>&1",
 
   // Configure tool-specific properties.
   "customizations": {
