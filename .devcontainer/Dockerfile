@@ -82,5 +82,6 @@ VOLUME [ "/var/lib/docker" ]
 # Setting the ENTRYPOINT to docker-init.sh will start up the Docker Engine 
 # inside the container "overrideCommand": false is set in devcontainer.json. 
 # The script will also execute CMD if you need to alter startup behaviors.
-ENTRYPOINT [ "/usr/local/share/docker-init.sh" ]
+# ENV DBUS_SESSION_BUS_ADDRESS="autolaunch:" DISPLAY=":1" LANG="en_US.UTF-8" LANGUAGE="en_US.UTF-8"
+ENTRYPOINT [ "/usr/local/share/docker-init.sh", "/usr/local/share/ssh-init.sh", "/usr/local/share/desktop-init.sh" ]
 CMD [ "sleep", "infinity" ]

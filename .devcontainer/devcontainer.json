@@ -10,6 +10,7 @@
   },
   "runArgs": [
     "--shm-size=1g",
+    "--init",
     "--privileged"
   ],
 	"mounts": [
@@ -63,8 +64,8 @@
 	},
 
   "hostRequirements": {
-		"memory": "6gb"
+		"memory": "4gb"
 	},
 
-  "remoteUser": "vscode"
+  "remoteUser": "node"
 }
