@@ -21,7 +21,7 @@ install_extension ms-azuretools.vscode-docker
 install_extension ms-kubernetes-tools.vscode-kubernetes-tools
 
 # Fluxbox: Install firefox for fluxbox
-apt-get install -y firefox-esr
+# apt-get install -y firefox-esr
 
 #[[ -z /etc/zsh/zshrc ]] && mkdir --parent /etc/zsh/zshrc && touch /etc/zsh/zshrc
 #echo "export DONT_PROMPT_WSL_INSTALL=true" | tee -a /etc/bash.bashrc >> /etc/zsh/zshrc >> /etc/profile.d/not-wsl.sh
