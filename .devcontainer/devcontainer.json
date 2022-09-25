@@ -17,9 +17,9 @@
 		"source=minikube-var-lib-docker,target=/var/lib/docker,type=volume",
 		"source=minikube-config,target=/home/vscode/.minikube,type=volume"
 	],
-  //"overrideCommand": false, // Note, this only won't crash if ENTRYPOINT is set in Dockerfile.
+  "overrideCommand": false, // Note, this only won't crash if ENTRYPOINT is set in Dockerfile.
   "postCreateCommand": ".devcontainer/postCreateCommand.sh",
-  "postStartCommand": "minikube start &",
+  "postStartCommand": "nohup bash -c 'minikube start &' > minikube.log 2>&1",
   //"postStartCommand": "bash -c 'minikube start &' > minikube.log 2>&1",
 
   // Configure tool-specific properties.
