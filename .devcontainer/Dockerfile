@@ -33,7 +33,7 @@ COPY library-scripts/*.sh library-scripts/*.env /tmp/library-scripts/
 RUN apt-get update && bash /tmp/library-scripts/microsoft-gpg-keys.sh
 
 # Install common-debian.sh
-ARG USERNAME=vscode
+ARG USERNAME=node
 ARG USER_UID=1000
 ARG USER_GID=$USER_UID
 RUN apt-get update && export DEBIAN_FRONTEND=noninteractive \
@@ -87,4 +87,4 @@ VOLUME [ "/var/lib/docker" ]
 # The script will also execute CMD if you need to alter startup behaviors.
 # ENV DBUS_SESSION_BUS_ADDRESS="autolaunch:" DISPLAY=":1" LANG="en_US.UTF-8" LANGUAGE="en_US.UTF-8"
 ENTRYPOINT [ "/usr/local/share/docker-init.sh", "/usr/local/share/ssh-init.sh", "/usr/local/share/desktop-init.sh" ]
-CMD [ "sleep", "infinity" ]
+# CMD [ "sleep", "infinity" ]
