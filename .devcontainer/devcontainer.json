@@ -19,7 +19,8 @@
 	],
   //"overrideCommand": false, // Note, this only won't crash if ENTRYPOINT is set in Dockerfile.
   "postCreateCommand": ".devcontainer/postCreateCommand.sh",
-  "postStartCommand": "bash -c 'minikube start &' > minikube.log 2>&1",
+  "postStartCommand": "minikube start &",
+  //"postStartCommand": "bash -c 'minikube start &' > minikube.log 2>&1",
 
   // Configure tool-specific properties.
   "customizations": {
