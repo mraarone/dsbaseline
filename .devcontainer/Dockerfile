@@ -25,6 +25,7 @@ ARG INSTALL_ZSH="true"
 ARG UPGRADE_PACKAGES="true"
 
 ENV DONT_PROMPT_WSL_INSTALL=true
+ENV DEBIAN_FRONTEND=noninteractive
 
 # Copy library scripts to execute
 COPY library-scripts/*.sh library-scripts/*.env /tmp/library-scripts/
