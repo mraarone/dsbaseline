@@ -68,7 +68,8 @@ RUN apt-get update && bash /tmp/library-scripts/github-debian.sh
 RUN apt-get update && bash /tmp/library-scripts/awscli-debian.sh
 
 # Install docker-in-docker.sh
-RUN apt-get update && bash /tmp/library-scripts/docker-in-docker-debian.sh
+ENV DOCKER_BUILDKIT=1
+RUN apt-get update && /bin/bash /tmp/library-scripts/docker-in-docker-debian.sh
 
 # Install desktop-lite-debian.sh
 RUN bash /tmp/library-scripts/desktop-lite-debian.sh
@@ -81,11 +82,10 @@ RUN apt-get update && \
 RUN apt-get autoremove -y && apt-get clean -y
 RUN rm -rf /var/lib/apt/lists/* /tmp/library-scripts/ /tmp/fluxbox/
 
-VOLUME [ "/var/lib/docker" ]
-
 # Setting the ENTRYPOINT to docker-init.sh will start up the Docker Engine 
 # inside the container "overrideCommand": false is set in devcontainer.json. 
 # The script will also execute CMD if you need to alter startup behaviors.
 # ENV DBUS_SESSION_BUS_ADDRESS="autolaunch:" DISPLAY=":1" LANG="en_US.UTF-8" LANGUAGE="en_US.UTF-8"
 ENTRYPOINT [ "/usr/local/share/docker-init.sh", "/usr/local/share/ssh-init.sh", "/usr/local/share/desktop-init.sh" ]
-# CMD [ "sleep", "infinity" ]
+VOLUME [ "/var/lib/docker" ]
+CMD ["sleep", "infinity"]
