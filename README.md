@@ -1,66 +1,59 @@
 # Setup
 
-### Create a repository from this template
+## Create a repository from this template
 
-1. Click the big green button `Use this template` or click <a href="../../generate">here</a>.
-1. Enter a Repository name and click `Create repository from template`
+1. Click the big green button `Use this template` or click [here]("../../generate").
+1. Enter a Repository name, click the checkbox to copy all branches, and click `Create repository from template`
 1. Head over to the created repository and complete the setup.
 
-### Complete setup
+## Complete setup
 
-1. In the a new repository, <a href="../../edit/main/cookiecutter.json">complete the project setup</a> by editing the `cookiecutter.json` file.
-1. Hit <kbd>cmd</kbd> + <kbd>S</kbd> and then <kbd>Enter</kbd> to perform a commit (the commit message doesn't really matter).
-1. Wait <a href="../../actions">Setup Repository Action</a> to complete.
-1. That's it, easy isn't it?
-
-If you have anything to add, please reply in this [Twitter thread]().
-
----
-
-# What is this all about?
-
-On June 6, 2019, [GitHub introduced Repository Templates](https://github.blog/2019-06-06-generate-new-repositories-with-repository-templates/) giving users an easy way to share boilerplate for their projects. This feature is fantastic, but lacking adoption to my knowledge and opinion for one reason... [Read the full blog post](https://stefanbuck.com/blog/repository-templates-meets-github-actions) to learn how to template new projects using repository templates and GitHub Actions.# Cookiecutter Data Science
-
-_A logical, reasonably standardized, but flexible project structure for doing and sharing data science work._
-
-#### [Project homepage](http://drivendata.github.io/cookiecutter-data-science/)
-
-### Requirements to use the cookiecutter template:
+1. In the a new repository, create a new [issue]("../../issues/new").
+1. Fill out the form, and commit the form (the commit description won't matter).
+1. Wait for the [Setup Repository Action]("../../actions") to complete.
+1. You'll see your project with most of the scaffolding gone.
+1. Click the branches dropdown.
+1. Select and merge each feature branch you want to include in your project.
+1. Head over to the Actions tab and run the "Finalize Setup" workflow to clean up your new project.
+1. That's it, now you have a Data Science project defined as code with Development Environment as a Service, DataOps, DevSecOps, MLOps, Infrastructure as Code, Robotic Process Automation, or whatever features you chose out of the feature branches that are available!
+1. If you don't see something that you'd like integrated, please create a new [issue]("../../issues/new") or fork the project and create a new [pull request]("../../pulls") to include a new branch for your feature contribution.
 
 ---
 
-- Python 2.7 or 3.5+
-- [Cookiecutter Python package](http://cookiecutter.readthedocs.org/en/latest/installation.html) >= 1.4.0: This can be installed with pip by or conda depending on how you manage your Python packages:
+## What is this all about?
 
-```bash
-$ pip install cookiecutter
-```
+Many fresh out of college data scientists aren't fully trained to be platform engineers, devops engineers, software engineers, networking engineers, system integrators, etc. Their job is to focus on data science. So, I set up a project automates as much as possible while inducing a well thought out standard for how data science projects are made, used, and maintained--at least in structure. Documentation to explain methodology is in the development stages. The goal is to make it easy for data scientists to focus on data science and not have to worry about the rest.
 
-or
+This repository is a template for creating new repositories. Once the big green button is used to create a new repository from this boilerplate template, you create an issue to further describe your project. And behind the scenes it uses [cookiecutter] to create a new repository from a template. The template is a [GitHub Action] that creates a new repository from a template and performs some setup tasks. In the end you have a customized data science project to start from.
 
-```bash
-$ conda config --add channels conda-forge
-$ conda install cookiecutter
-```
+In addition, if you choose to copy all of the branches when creating your repository from the template, you will also have additional features you can incorporate into your project. The final scaffolding is an action called "Finalize Scaffolding" that will erase the scaffolding used to create and customize your project including the scaffolding actions, issues, and unused template feature branches.
 
-### To start a new project, run:
+### [Project homepage](http://drivendata.github.io/cookiecutter-data-science/)
 
----
+### Requirements to use the cookiecutter template
 
-    cookiecutter -c v1 https://github.com/drivendata/cookiecutter-data-science
+1. Github
+1. Python 3.9+
+1. An organization set up for GitHub Codespaces to use the devcontainers (local devcontainers still being tested, but as of this writing, the devconatiners work with GitHub Codespaces
 
-[![asciicast](https://asciinema.org/a/244658.svg)](https://asciinema.org/a/244658)
+### Data Science Baseline Features
 
-### New version of Cookiecutter Data Science
-
----
-
-Cookiecutter data science is moving to v2 soon, which will entail using
-the command `ccds ...` rather than `cookiecutter ...`. The cookiecutter command
-will continue to work, and this version of the template will still be available.
-To use the legacy template, you will need to explicitly use `-c v1` to select it.
-Please update any scripts/automation you have to append the `-c v1` option (as above),
-which is available now.
+- A stellar data science project structure
+- Python 3.8
+- NoVNC
+- Fluxbox (VNC)
+- kubernetes
+- minikube
+- helm
+- docker-in-docker retained inside a single Codespace to keep costs and infrastructure simple.
+- Bash with Oh-My-Bash
+- Copilot Plugin as an AI assistant for writing code
+- Mintly Plugin for AI generated documentation from code
+- Many other extensions (Gitlens, Markup linting, Yaml linting, Sonarcube security linting, etc.)
+- DevSecOps pipeline defined by a Noxfile
+- DevSecOps pipeline defined by a pre-commit hook definition
+- DevSecOps configuration for VSCode using py-utils matching Microsoft's open source configuration
+- Recommend copying my [dotfiles](https://github.com/mraarone/dotfiles) into your account for a massively customized ZSH experience
 
 ### The resulting directory structure
 
@@ -68,7 +61,7 @@ which is available now.
 
 The directory structure of your new project looks like this:
 
-```
+```lang=text
 ├── LICENSE
 ├── Makefile           <- Makefile with commands like `make data` or `make train`
 ├── README.md          <- The top-level README for developers using this project.
@@ -124,10 +117,14 @@ We welcome contributions! [See the docs for guidelines](https://drivendata.githu
 
 ---
 
-    pip install -r requirements.txt
+```lang=bash
+pip install -r requirements.txt
+```
 
 ### Running the tests
 
 ---
 
-    py.test tests
+```lang=bash
+py.test tests
+```
