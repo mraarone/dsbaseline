@@ -99,6 +99,7 @@ class TestCookieSetup(object):
             'src/dsbaseline/data',
             'src/dsbaseline/features',
             'src/dsbaseline/models',
+            'src/dsbaseline/tests',
             'src/dsbaseline/visualization',
             'tests'
         ]
@@ -112,16 +113,16 @@ class TestCookieSetup(object):
 
         assert len(set(abs_expected_dirs + ignored_dirs)) - len(set(abs_dirs)) == 0
 
-    def test_nox_mypy(self):
-        noxfile_path = self.path / 'noxfile.py'
-        assert noxfile_path.exists()
-        assert no_curlies(noxfile_path)
+    # def test_nox_mypy(self):
+    #     noxfile_path = self.path / 'noxfile.py'
+    #     assert noxfile_path.exists()
+    #     assert no_curlies(noxfile_path)
 
-        try:
-            # run the shell command
-            sh.python(['nox', '-s', 'mypy'])
-        except sh.ErrorReturnCode as e:
-          # print the error, so we know what went wrong
-          print(e)
-          # make sure the test fails
-          pytest.fail(e)
+    #     try:
+    #         # run the shell command
+    #         sh.python(['nox', '-s', 'mypy'])
+    #     except sh.ErrorReturnCode as e:
+    #       # print the error, so we know what went wrong
+    #       print(e)
+    #       # make sure the test fails
+    #       pytest.fail(e)

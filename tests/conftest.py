@@ -8,6 +8,7 @@ CCDS_ROOT = Path(__file__).parents[1].resolve()
 
 args = {
         'author_name': 'dsbaseline',
+        'author_email': 'dsbaseline',
         'project_name': 'dsbaseline',
         'open_source_license': 'BSD-3'
        }
