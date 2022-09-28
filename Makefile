@@ -15,12 +15,12 @@ PROJECT_NAME = {{ cookiecutter.repo_name }}
 
 ## Delete all compiled Python files
 clean:
-	find . -type f -name "*.py[co]" -delete
-	find . -depth -type d -name "__pycache__" -exec rm -rf {} \;
-	find . -depth -type d -name ".mypy_cache" -exec rm -rf {} \;
-	find . -depth -type d -name ".nox" -exec rm -rf {} \;
-	find . -depth -type d -name ".pytest_cache" -exec rm -rf {} \;
-	find . -depth -type d -name ".pytype" -exec rm -rf {} \;
+	find $(PROJECT_DIR) -type f -name "*.py[co]" -delete
+	find $(PROJECT_DIR) -depth -type d -name "__pycache__" -exec rm -rf {} \;
+	find $(PROJECT_DIR) -depth -type d -name ".mypy_cache" -exec rm -rf {} \;
+	find $(PROJECT_DIR) -depth -type d -name ".nox" -exec rm -rf {} \;
+	find $(PROJECT_DIR) -depth -type d -name ".pytest_cache" -exec rm -rf {} \;
+	find $(PROJECT_DIR) -depth -type d -name ".pytype" -exec rm -rf {} \;
 
 ## Install Python Dependencies
 requirements: test_template
@@ -32,12 +32,12 @@ test_template: clean
 
 ## Test mkdocs for the dsbaseline GitHub pages
 test_docs: requirements
-	cd docs
+	cd $(PROJECT_DIR)/docs
 	mkdocs serve
 
 ## Use mkdocs to deploy the dsbaseline GitHub pages
 deploy_docs: requirements
-	cd docs
+	cd $(PROJECT_DIR)/docs
 	mkdocs gh-deploy --clean
 
 #################################################################################
