@@ -32,13 +32,11 @@ test_template: clean
 
 ## Test mkdocs for the dsbaseline GitHub pages
 test_docs: requirements
-	cd $(PROJECT_DIR)/docs
-	mkdocs serve
+	cd $(PROJECT_DIR)/docs && mkdocs serve
 
 ## Use mkdocs to deploy the dsbaseline GitHub pages
 deploy_docs: requirements
-	cd $(PROJECT_DIR)/docs
-	mkdocs gh-deploy --clean
+	cd $(PROJECT_DIR)/docs && mkdocs gh-deploy --clean
 
 #################################################################################
 # PROJECT RULES                                                                 #
