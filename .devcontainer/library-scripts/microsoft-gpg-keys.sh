@@ -13,3 +13,6 @@ apt-get -y install code code-insiders
 
 # Update debian gpg keys
 for i in `apt-get -qq update 2>&1 | sed 's/.*PUBKEY //'`; do apt-key adv --keyserver keyserver.ubuntu.com --recv-keys $i; done
+
+# This is used for X or Fluxbox, but it won't install unless the above lists and keys are loaded
+apt-get install -y firefox-esr
