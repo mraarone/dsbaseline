@@ -13,7 +13,7 @@
 
 install_extension() {
     /usr/local/bin/code --install-extension $1
-    /usr/local/bin/code-insiders --install-extension $1
+#    /usr/local/bin/code-insiders --install-extension $1
 }
 
 # Install VS Code extensions into VS Code in desktop so we can try
