@@ -45,7 +45,7 @@
 
       // Add the IDs of extensions you want installed when the container is created.
       "extensions": [
-        "ms-python.python", 
+        "ms-python.python",
         "ms-python.vscode-pylance",
         "mechatroner.rainbow-csv",
         "oderwat.indent-rainbow",
@@ -59,7 +59,16 @@
         "rogalmic.bash-debug",
         "streetsidesoftware.code-spell-checker",
         "ms-azuretools.vscode-docker",
-        "ms-kubernetes-tools.vscode-kubernetes-tools"
+        "ms-kubernetes-tools.vscode-kubernetes-tools",
+        "eamodio.gitlens",
+        "JHeilingbrunner.vscode-gnupg-tool",
+        "hashicorp.hcl",
+        "bierner.markdown-mermaid",
+        "DavidAnson.vscode-markdownlint",
+        "mintlify.document",
+        "luisfontes19.vscode-swissknife",
+        "ms-toolsai.jupyter",
+        "ms-toolsai.jupyter-renderers"
       ]
     }
   },
