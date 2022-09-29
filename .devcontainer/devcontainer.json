@@ -46,7 +46,14 @@
       // Add the IDs of extensions you want installed when the container is created.
       "extensions": [
         "ms-python.python", 
-        "ms-python.vscode-pylance"
+        "ms-python.vscode-pylance",
+        "ms-vscode-remote.remote-containers",
+        "chrisdias.vscode-opennewinstance",
+        "mads-hartmann.bash-ide-vscode",
+        "rogalmic.bash-debug",
+        "streetsidesoftware.code-spell-checker",
+        "ms-azuretools.vscode-docker",
+        "ms-kubernetes-tools.vscode-kubernetes-tools"
       ]
     }
   },
