@@ -1,5 +1,6 @@
 {
     "workbench.colorTheme": "Default Dark+",
+    "dotfiles.targetPath": "~/dotfiles",
     "security.workspace.trust.untrustedFiles": "open",
     "git.autofetch": true,
     "[dart]": {
@@ -14,8 +15,7 @@
         "editor.tabCompletion": "onlySnippets",
         "editor.wordBasedSuggestions": false
     },
-    "github.copilot.advanced": {
-    },
+    "github.copilot.advanced": {},
     "editor.inlineSuggest.enabled": true,
     "workbench.colorCustomizations": {},
     "git.enableSmartCommit": true,
@@ -23,7 +23,6 @@
     "redhat.telemetry.enabled": false,
     "explorer.confirmDragAndDrop": false,
     "github.copilot.enable": {
-
         "*": true,
         "yaml": true,
         "plaintext": false,
@@ -67,7 +66,7 @@
     "terminal.integrated.allowMnemonics": true,
     "window.zoomLevel": 1,
     "editor.fontFamily": "FuraMono NF, Menlo, Consolas, 'Courier New', monospace",
-    "terminal.integrated.shellIntegration.enabled": false,
+    "terminal.integrated.shellIntegration.enabled": true,
     "terminal.integrated.fontFamily": "FuraMono NF, Menlo, Consolas, 'Courier New', monospace",
     "terminal.integrated.fontSize": 11,
     "python.testing.pytestArgs": [

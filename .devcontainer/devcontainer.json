@@ -47,6 +47,12 @@
       "extensions": [
         "ms-python.python", 
         "ms-python.vscode-pylance",
+        "mechatroner.rainbow-csv",
+        "oderwat.indent-rainbow",
+        "SonarSource.sonarlint-vscode",
+        "ms-vscode.makefile-tools",
+        "redhat.vscode-yaml",
+        "GitHub.copilot",
         "ms-vscode-remote.remote-containers",
         "chrisdias.vscode-opennewinstance",
         "mads-hartmann.bash-ide-vscode",
