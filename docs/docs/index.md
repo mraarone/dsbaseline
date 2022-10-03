@@ -1,6 +1,26 @@
-# Data Science Baseline Project Template
+# Data Science Project Template (DSBaseline)
 
-_A logical, reasonably standardized, but flexible project structure for doing and sharing data science work._
+DSBaseline is a collection of tools and best practices for data science projects. It is designed to be a template for your own data science projects. It is a collection of tools and best practices that I have found useful in my own data science projects. I hope you find it useful as well.
+
+## Why use DSBaseline?
+
+Many new data science and machine learning engineers are not familiar with areas required to further along their work. These areas usually come with cross-skilled expriences over time, and are often not taught in University. Organizations early in AI/ML adoption also haven't yet developed an organizational data strategy or began connecting their data science groups with business analyst, data engineering, information technology, networking, or executive leadership consumers. These situations often lead to data science projects not making it to production, or a low production rate.
+
+The goal with this data science baseline project template is to give base resources to data scientists and maturing organizations. Let this project be an example of how DataOps, DevSecOps, and MLOps can be employed end-to-end in a project from a cloud native and as-code perspective.
+
+This project provides example of security, system administration, linux consoles, networking, containerization, orchestration, software engineering best practices, online data analysis, microservices, CI/CD, project organization, and more. These are all important areas that are necessary to build a successful data science project. DSBaseline is a collection of tools and best practices that I have found useful in my own data science projects over the years. I hope you find it useful as well.
+
+Much thanks to Claudio Jolowicz for his [Hypermodern Python](https://github.com/cjolowicz/hypermodern-python), and Driven Data for their outstanding [Cookiecutter-Datascience-Project]](https://github.com/drivendata/cookiecutter-data-science/). [Stefan Buck](https://github.com/stefanbuck) also had great resource using new GitHub features that made this project possible. Head over to these folks' repos for more information. Thank you greatly for your open source contributions!
+
+# Main Benefits
+
+- Rapid no-code customized project generation
+- An end-to-end project for the entire data science lifecycle
+- Totally as-code implementations
+- A lightweight browser-based X-windows environment using NoVNC and Fluxbox
+- Fully featured development environment as-a-service with zsh and kubernetes installed on a single container to keep costs low
+- Feature branches provide example implementations of standard data science tools
+- Flexible project structure for doing and sharing data science work.
 
 ## Why use this project structure?
 
