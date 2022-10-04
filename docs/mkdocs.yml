@@ -3,7 +3,7 @@ site_description: A project template and directory structure for Python data sci
 repo_url: https://github.com/mraarone/dsbaseline
 edit_uri: edit/master/docs/docs
 copyright: MIT Copyright.
-theme: cinder
+theme: material
 extra_css:
   - css/extra.css
 nav:

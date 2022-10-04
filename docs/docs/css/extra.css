@@ -1,3 +1,7 @@
 h1, h2, h3 {
     margin-top: 77px;
 }
+
+mermaid.flowchartConfig = {
+    width: 100%
+}

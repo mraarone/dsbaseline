@@ -34,7 +34,7 @@ In addition, if you choose to copy all of the branches when creating your reposi
 
 1. Github
 1. Python 3.9+
-1. An organization set up for GitHub Codespaces to use the devcontainers (local devcontainers still being tested, but as of this writing, the devconatiners work with GitHub Codespaces
+1. An organization set up for GitHub Codespaces to use the devcontainers (local devcontainers still being tested, but as of this writing, the devcontainers work with GitHub Codespaces
 
 ### Data Science Baseline Features
 

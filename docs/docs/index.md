@@ -1,18 +1,22 @@
 # Data Science Project Template (DSBaseline)
 
-DSBaseline is a collection of tools and best practices for data science projects. It is designed to be a template for your own data science projects. It is a collection of tools and best practices that I have found useful in my own data science projects. I hope you find it useful as well.
+DSBaseline is a project template that is easy to use and customize. The main template project uses new GitHub features to make the creation and initialization of the project a no-code user experience. Once your project is created from the template, you have the option to also copy all of the branches and merge in feature branches. These branches are being pulled together so that they will be modular. You'll be able to include example implementations like for wrapping your code into a microservice for inference, using a directed acyclic graph automation system to manage data ETL/ELT/EtLT tasks, data version control, rapid development advanced user interfaces, and more are being built from examples out in the wild. Once you merge in feature branches, go to "Actions" and click the "Finalize Project" workflow to clean up the undesired feature branches and remaining scaffolding artifacts.
+
+Use this project for everything.
+
+Please CONTRIBUTE! This project is a work in progress and needs your help to make it better. If you don't see something that you'd like integrated, please create a new [issue](../../issues/new) or fork the project and create a new [pull request](../../pulls) to include a new branch for your feature contribution.
 
 ## Why use DSBaseline?
 
-Many new data science and machine learning engineers are not familiar with areas required to further along their work. These areas usually come with cross-skilled expriences over time, and are often not taught in University. Organizations early in AI/ML adoption also haven't yet developed an organizational data strategy or began connecting their data science groups with business analyst, data engineering, information technology, networking, or executive leadership consumers. These situations often lead to data science projects not making it to production, or a low production rate.
+Many new data science and machine learning engineers are not familiar with areas required to further along their work. These areas usually come with cross-skilled experiences over time, and are often not taught in University. Organizations early in AI/ML adoption also haven't yet developed an organizational data strategy or began connecting their data science groups with business analyst, data engineering, information technology, networking, or executive leadership consumers. These situations often lead to data science projects not making it to production, or a low production rate.
 
 The goal with this data science baseline project template is to give base resources to data scientists and maturing organizations. Let this project be an example of how DataOps, DevSecOps, and MLOps can be employed end-to-end in a project from a cloud native and as-code perspective.
 
 This project provides example of security, system administration, linux consoles, networking, containerization, orchestration, software engineering best practices, online data analysis, microservices, CI/CD, project organization, and more. These are all important areas that are necessary to build a successful data science project. DSBaseline is a collection of tools and best practices that I have found useful in my own data science projects over the years. I hope you find it useful as well.
 
-Much thanks to Claudio Jolowicz for his [Hypermodern Python](https://github.com/cjolowicz/hypermodern-python), and Driven Data for their outstanding [Cookiecutter-Datascience-Project]](https://github.com/drivendata/cookiecutter-data-science/). [Stefan Buck](https://github.com/stefanbuck) also had great resource using new GitHub features that made this project possible. Head over to these folks' repos for more information. Thank you greatly for your open source contributions!
+Much thanks to Claudio Jolowicz for his [Hypermodern Python](https://github.com/cjolowicz/hypermodern-python), and Driven Data for their outstanding [Cookiecutter-Datascience-Project]](<https://github.com/drivendata/cookiecutter-data-science/>). [Stefan Buck](https://github.com/stefanbuck) also had great resource using new GitHub features that made this project possible. Head over to these folks' repos for more information. Thank you greatly for your open source contributions!
 
-# Main Benefits
+## Main Benefits
 
 - Rapid no-code customized project generation
 - An end-to-end project for the entire data science lifecycle
@@ -24,17 +28,11 @@ Much thanks to Claudio Jolowicz for his [Hypermodern Python](https://github.com/
 
 ## Why use this project structure?
 
-> We're not talking about bikeshedding the indentation aesthetics or pedantic formatting standards — ultimately, data science code quality is about correctness and reproducibility.
+> Ultimately, data science code quality is about correctness and reproducibility.
 
-When we think about data analysis, we often think just about the resulting reports, insights, or visualizations. While these end products are generally the main event, it's easy to focus on making the products _look nice_ and ignore the _quality of the code that generates them_. Because these end products are created programmatically, **code quality is still important**! And we're not talking about bikeshedding the indentation aesthetics or pedantic formatting standards — ultimately, data science code quality is about correctness and reproducibility.
-
-It's no secret that good analyses are often the result of very scattershot and serendipitous explorations. Tentative experiments and rapidly testing approaches that might not work out are all part of the process for getting to the good stuff, and there is no magic bullet to turn data exploration into a simple, linear progression.
-
-That being said, once started it is not a process that lends itself to thinking carefully about the structure of your code or project layout, so it's best to start with a clean, logical structure and stick to it throughout. We think it's a pretty big win all around to use a fairly standardized setup like this one. Here's why:
+When we think about data analysis, we often think just about the resulting reports, insights, or visualizations. While these end products are generally the main event, it's easy to focus on making the products _look nice_ and ignore the _quality of the code that generates them_. Because these end products are created programmatically, **code quality is still important**!
 
 ### Other people will thank you
-
-> Nobody sits around before creating a new Rails project to figure out where they want to put their views; they just run `rails new` to get a standard project skeleton like everybody else.
 
 A well-defined, standard project structure means that a newcomer can begin to understand an analysis without digging in to extensive documentation. It also means that they don't necessarily have to read 100% of the code before knowing where to look for very specific things.
 
@@ -44,53 +42,17 @@ Well organized code tends to be self-documenting in that the organization itself
 - Learn from your analysis about the process and the domain
 - Feel confident in the conclusions at which the analysis arrives
 
-A good example of this can be found in any of the major web development frameworks like Django or Ruby on Rails. Nobody sits around before creating a new Rails project to figure out where they want to put their views; they just run `rails new` to get a standard project skeleton like everybody else. Because that default project structure is _logical_ and _reasonably standard across most projects_, it is much easier for somebody who has never seen a particular project to figure out where they would find the various moving parts.
-
-Another great example is the [Filesystem Hierarchy Standard](https://en.wikipedia.org/wiki/Filesystem_Hierarchy_Standard) for Unix-like systems. The `/etc` directory has a very specific purpose, as does the `/tmp` folder, and everybody (more or less) agrees to honor that social contract. That means a Red Hat user and an Ubuntu user both know roughly where to look for certain types of files, even when using each other's system — or any other standards-compliant system for that matter!
-
 Ideally, that's how it should be when a colleague opens up your data science project.
-
-### You will thank you
-
-Ever tried to reproduce an analysis that you did a few months ago or even a few years ago? You may have written the code, but it's now impossible to decipher whether you should use `make_figures.py.old`, `make_figures_working.py` or `new_make_figures01.py` to get things done. Here are some questions we've learned to ask with a sense of existential dread:
-
-- Are we supposed to go in and join the column X to the data before we get started or did that come from one of the notebooks?
-- Come to think of it, which notebook do we have to run first before running the plotting code: was it "process data" or "clean data"?
-- Where did the shapefiles get downloaded from for the geographic plots?
-- _Et cetera, times infinity._
-
-These types of questions are painful and are symptoms of a disorganized project. A good project structure encourages practices that make it easier to come back to old work, for example separation of concerns, abstracting analysis as a [DAG](https://en.wikipedia.org/wiki/Directed_acyclic_graph), and engineering best practices like version control.
-
-### Nothing here is binding
-
-> "A foolish consistency is the hobgoblin of little minds" — Ralph Waldo Emerson (and [PEP 8!](https://www.python.org/dev/peps/pep-0008/#a-foolish-consistency-is-the-hobgoblin-of-little-minds))
-
-Disagree with a couple of the default folder names? Working on a project that's a little nonstandard and doesn't exactly fit with the current structure? Prefer to use a different package than one of the (few) defaults?
-
-**Go for it!** This is a lightweight structure, and is intended to be a good _starting point_ for many projects. Or, as PEP 8 put it:
-
-> Consistency within a project is more important. Consistency within one module or function is the most important. ... However, know when to be inconsistent -- sometimes style guide recommendations just aren't applicable. When in doubt, use your best judgment. Look at other examples and decide what looks best. And don't hesitate to ask!
-
-## Getting started
-
-With this in mind, we've created a data science cookiecutter template for projects in Python. Your analysis doesn't have to be in Python, but the template does provide some Python boilerplate that you'd want to remove (in the `src` folder for example, and the Sphinx documentation skeleton in `docs`).
 
 ### Requirements
 
-- Python 2.7 or 3.5
-- [cookiecutter Python package](http://cookiecutter.readthedocs.org/en/latest/installation.html) >= 1.4.0: `pip install cookiecutter`
+- GitHub account
+- Python 3.8.10+
+- Poetry 1.2.1+
 
 ### Starting a new project
 
-Starting a new project is as easy as running this command at the command line. No need to create a directory first, the cookiecutter will do it for you.
-
-```nohighlight
-cookiecutter https://github.com/huntsville-open-source-ai/dsbaseline
-```
-
-### Example
-
-<script id="asciicast-244658" src="https://asciinema.org/a/244658.js" async></script>
+Starting a new project is as easy creating a new issue with your project customized information like Author Name, Project Name, License type, etc. GitHub CI will automatically replace the tokens throughout the project with your customizations and remove the scaffolding artifacts. You can then merge in the feature branches that you want to use in your project and kick off the "Finalize Project" workflow to clean up the remaining scaffolding artifacts. It's that easy!
 
 ## Directory structure
 
@@ -145,27 +107,34 @@ cookiecutter https://github.com/huntsville-open-source-ai/dsbaseline
 
 ## Opinions
 
-There are some opinions implicit in the project structure that have grown out of our experience with what works and what doesn't when collaborating on data science projects. Some of the opinions are about workflows, and some of the opinions are about tools that make life easier. Here are some of the beliefs which this project is built on—if you've got thoughts, please [contribute or share them](#contributing).
+This project may appear opinionated, but it's not really. Enough has been built into the project to get you started, but it's not so much that you can't change it. The project is designed to be flexible and easy to change. The project is designed to be a starting point for your own project, not a framework that you have to use. There may be multiple linters or multiple ways to implement CI/CD and security. That's okay, it's so you have options to choose from! Simply remove what you do not want, or add in what you need. For instance, pre-install git hooks using ```pip install pre-install``` and ```pre-install install``` if you want to implement the ```pre-install-hooks.yml``` in the root of the project. You can use Nox to run a sequential run of the preliminary DevSecOps pipeline. This is an example of how you can implement these tools in your project. Your security requirements will undoubtedly be different. This project uses all Free and Open Source Software to get your started as long as you make your project Open Source (Public).
 
-### Data is immutable
+At the time of this writing, GitHub Codespaces cost $0.18 USD / hour for the 2 core version. But the ```devcontainer.json``` is currently configured to use 8GB of RAM, which is a 4 core system and $0.36 USD / hour. It's using this so it can run Docker-in-Docker, Kubernetes, and an X-Windows system for web testing and a desktop. All of this runs within the container, so it only costs exactly what this one Codespace costs per hour. The Kubernetes environment is built using Minikube. You can use helm to install helm charts in a single console line to have MySQL, PostgreSQL, SQLite, Redis, dbt, Feast, Spark, Kafka, Flink, Zeppelin, or etc. running in your single Codespace for exploration and testing.
 
-Don't ever edit your raw data, especially not manually, and especially not in Excel. Don't overwrite your raw data. Don't save multiple versions of the raw data. Treat the data (and its format) as immutable. The code you write should move the raw data through a pipeline to your final analysis. You shouldn't have to run all of the steps every time you want to make a new figure (see [Analysis is a DAG](#analysis-is-a-dag)), but anyone should be able to reproduce the final products with only the code in `src` and the data in `data/raw`.
+If you mess something up, blow away the Codespace and start a new one. No harm no fowl, just make sure you commit and push your code changes you want to keep.
 
-Also, if data is immutable, it doesn't need source control in the same way that code does. Therefore, **_by default, the data folder is included in the `.gitignore` file._** If you have a small amount of data that rarely changes, you may want to include the data in the repository. Github currently warns if files are over 50MB and rejects files over 100MB. Some other options for storing/syncing large data include [AWS S3](https://aws.amazon.com/s3/) with a syncing tool (e.g., [`s3cmd`](http://s3tools.org/s3cmd)), [Git Large File Storage](https://git-lfs.github.com/), [Git Annex](https://git-annex.branchable.com/), and [dat](http://dat-data.com/). Currently by default, we ask for an S3 bucket and use [AWS CLI](http://docs.aws.amazon.com/cli/latest/reference/s3/index.html) to sync data in the `data` folder with the server.
+### A Reasonable Data Science Workflow for Rapid Iteration
 
-### Notebooks are for exploration and communication
+flowchart LR
+    A[Data: Generation] --> B(Data: Ingest) --> C(Data: Transform) --> D(Data: Load) --> E(Data: Explore) --> F(Data: Explore) --|Move Code to Source Code Package|> G(Data: Model) --> H(Data: Model) -- I(Data: Report)
+    B --> D
+    D --> C
+    D --> J[Data: Store]
+    J --> K[Data: Catalog]
+    J --> L[Data: Version]
+    J --> M[Data: Mart]
+    J --> N[Data: Feature Store]
+    B --> C{Decision}
+    C -->|One| D[Result one]
+    C -->|Two| E[Resulme t two]
 
-Notebook packages like the [Jupyter notebook](http://jupyter.org/), [Beaker notebook](http://beakernotebook.com/), [Zeppelin](http://zeppelin-project.org/), and other literate programming tools are very effective for exploratory data analysis. However, these tools can be less effective for reproducing an analysis. When we use notebooks in our work, we often subdivide the `notebooks` folder. For example, `notebooks/exploratory` contains initial explorations, whereas `notebooks/reports` is more polished work that can be exported as html to the `reports` directory.
+1. Follow a naming convention that shows the owner and the order the analysis was done in. We use the format `<step>-<ghuser>-<description>.ipynb` (e.g., `0.3-bull-visualize-distributions.ipynb`).
 
-Since notebooks are challenging objects for source control (e.g., diffs of the `json` are often not human-readable and merging is near impossible), we recommended not collaborating directly with others on Jupyter notebooks. There are two steps we recommend for using notebooks effectively:
-
-1.  Follow a naming convention that shows the owner and the order the analysis was done in. We use the format `<step>-<ghuser>-<description>.ipynb` (e.g., `0.3-bull-visualize-distributions.ipynb`).
-
-2.  Refactor the good parts. Don't write code to do the same task in multiple notebooks. If it's a data preprocessing task, put it in the pipeline at `src/data/make_dataset.py` and load data from `data/interim`. If it's useful utility code, refactor it to `src`.
+2. Refactor the good parts. Don't write code to do the same task in multiple notebooks. If it's a data preprocessing task, put it in the data pipeline at `src/data/make_dataset.py` and load data from `data/interim`. If it's useful utility code, refactor it to `src`.
 
 Now by default we turn the project into a Python package (see the `setup.py` file). You can import your code and use it in notebooks with a cell like the following:
 
-```
+```python
 # OPTIONAL: Load the "autoreload" extension so that code can change
 %load_ext autoreload
 
@@ -175,9 +144,9 @@ Now by default we turn the project into a Python package (see the `setup.py` fil
 from src.data import make_dataset
 ```
 
-### Analysis is a directed acyclic graph ([DAG](https://en.wikipedia.org/wiki/Directed_acyclic_graph))
+### Analysis is a directed acyclic graph
 
-Often in an analysis you have long-running steps that preprocess data or train models. If these steps have been run already (and you have stored the output somewhere like the `data/interim` directory), you don't want to wait to rerun them every time. We prefer [`make`](https://www.gnu.org/software/make/) for managing steps that depend on each other, especially the long-running ones. Make is a common tool on Unix-based platforms (and [is available for Windows]()). Following the [`make` documentation](https://www.gnu.org/software/make/), [Makefile conventions](https://www.gnu.org/prep/standards/html_node/Makefile-Conventions.html#Makefile-Conventions), and [portability guide](http://www.gnu.org/savannah-checkouts/gnu/autoconf/manual/autoconf-2.69/html_node/Portable-Make.html#Portable-Make) will help ensure your Makefiles work effectively across systems. Here are [some](http://zmjones.com/make/) [examples](http://blog.kaggle.com/2012/10/15/make-for-data-scientists/) to [get started](https://web.archive.org/web/20150206054212/http://www.bioinformaticszen.com/post/decomplected-workflows-makefiles/). A number of data folks use `make` as their tool of choice, including [Mike Bostock](https://bost.ocks.org/mike/make/).
+([DAG](https://en.wikipedia.org/wiki/Directed_acyclic_graph)) -- Often in an analysis you have long-running steps that preprocess data or train models. If these steps have been run already (and you have stored the output somewhere like the `data/interim` directory), you don't want to wait to rerun them every time. We prefer [`make`](https://www.gnu.org/software/make/) for managing steps that depend on each other, especially the long-running ones. Make is a common tool on Unix-based platforms (and is available for Windows). Following the [`make` documentation](https://www.gnu.org/software/make/), [Makefile conventions](https://www.gnu.org/prep/standards/html_node/Makefile-Conventions.html#Makefile-Conventions), and [portability guide](http://www.gnu.org/savannah-checkouts/gnu/autoconf/manual/autoconf-2.69/html_node/Portable-Make.html#Portable-Make) will help ensure your Makefiles work effectively across systems. Here are [some](http://zmjones.com/make/) [examples](http://blog.kaggle.com/2012/10/15/make-for-data-scientists/) to [get started](https://web.archive.org/web/20150206054212/http://www.bioinformaticszen.com/post/decomplected-workflows-makefiles/). A number of data folks use `make` as their tool of choice, including [Mike Bostock](https://bost.ocks.org/mike/make/).
 
 There are other tools for managing DAGs that are written in Python instead of a DSL (e.g., [Paver](http://paver.github.io/paver/#), [Luigi](http://luigi.readthedocs.org/en/stable/index.html), [Airflow](https://airflow.apache.org/index.html), [Snakemake](https://snakemake.readthedocs.io/en/stable/), [Ruffus](http://www.ruffus.org.uk/), or [Joblib](https://pythonhosted.org/joblib/memory.html)). Feel free to use these if they are more appropriate for your analysis.
 
@@ -187,10 +156,10 @@ The first step in reproducing an analysis is always reproducing the computationa
 
 One effective approach to this is use [virtualenv](https://virtualenv.pypa.io/en/latest/) (we recommend [virtualenvwrapper](https://virtualenvwrapper.readthedocs.org/en/latest/) for managing virtualenvs). By listing all of your requirements in the repository (we include a `requirements.txt` file) you can easily track the packages needed to recreate the analysis. Here is a good workflow:
 
-1.  Run `mkvirtualenv` when creating a new project
-2.  `pip install` the packages that your analysis needs
-3.  Run `pip freeze > requirements.txt` to pin the exact package versions used to recreate the analysis
-4.  If you find you need to install another package, run `pip freeze > requirements.txt` again and commit the changes to version control.
+1. Run `mkvirtualenv` when creating a new project
+2. `pip install` the packages that your analysis needs
+3. Run `pip freeze > requirements.txt` to pin the exact package versions used to recreate the analysis
+4. If you find you need to install another package, run `pip freeze > requirements.txt` again and commit the changes to version control.
 
 If you have more complex requirements for recreating your environment, consider a virtual machine based approach such as [Docker](https://www.docker.com/) or [Vagrant](https://www.vagrantup.com/). Both of these tools use text-based formats (Dockerfile and Vagrantfile respectively) you can easily add to source control to describe how to create a virtual machine with the requirements you need.
 
@@ -210,7 +179,7 @@ AWS_SECRET_ACCESS_KEY=mysecretkey
 OTHER_VARIABLE=something
 ```
 
-#### Use a package to load these variables automatically.
+#### Use a package to load these variables automatically
 
 If you look at the stub script in `src/data/make_dataset.py`, it uses a package called [python-dotenv](https://github.com/theskumar/python-dotenv) to load up all the entries in this file as environment variables so they are accessible with `os.environ.get`. Here's an example snippet adapted from the `python-dotenv` documentation:
 
@@ -231,9 +200,9 @@ other_variable = os.environ.get("OTHER_VARIABLE")
 
 #### AWS CLI configuration
 
-When using Amazon S3 to store data, a simple method of managing AWS access is to set your access keys to environment variables. However, managing mutiple sets of keys on a single machine (e.g. when working on multiple projects) it is best to use a [credentials file](https://docs.aws.amazon.com/cli/latest/userguide/cli-config-files.html), typically located in `~/.aws/credentials`. A typical file might look like:
+When using Amazon S3 to store data, a simple method of managing AWS access is to set your access keys to environment variables. However, managing multiple sets of keys on a single machine (e.g. when working on multiple projects) it is best to use a [credentials file](https://docs.aws.amazon.com/cli/latest/userguide/cli-config-files.html), typically located in `~/.aws/credentials`. A typical file might look like:
 
-```
+```toml
 [default]
 aws_access_key_id=myaccesskey
 aws_secret_access_key=mysecretkey
@@ -243,13 +212,13 @@ aws_access_key_id=myprojectaccesskey
 aws_secret_access_key=myprojectsecretkey
 ```
 
-You can add the profile name when initialising a project; assuming no applicable environment variables are set, the profile credentials will be used by default.
+You can add the profile name when initializing a project; assuming no applicable environment variables are set, the profile credentials will be used by default.
 
 ### Be conservative in changing the default folder structure
 
 To keep this structure broadly applicable for many different kinds of projects, we think the best approach is to be liberal in changing the folders around for _your_ project, but be conservative in changing the default structure for _all_ projects.
 
-We've created a <span class="label label-info">folder-layout</span> label specifically for issues proposing to add, subtract, rename, or move folders around. More generally, we've also created a <span class="label label-warning">needs-discussion</span> label for issues that should have some careful discussion and broad support before being implemented.
+We've created a ```folder-layout``` label specifically for issues proposing to add, subtract, rename, or move folders around. More generally, we've also created a ```needs-discussion``` label for issues that should have some careful discussion and broad support before being implemented.
 
 ## Contributing
 
