@@ -15,8 +15,8 @@
 1. Click the branches dropdown.
 1. Select and merge each feature branch you want to include in your project.
 1. Head over to the Actions tab and run the "Finalize Setup" workflow to clean up your new project.
-1. That's it, now you have a Data Science project defined as code with Development Environment as a Service, DataOps, DevSecOps, MLOps, Infrastructure as Code, Robotic Process Automation, or whatever features you chose out of the feature branches that are available!
-1. If you don't see something that you'd like integrated, please create a new [issue]("../../issues/new") or fork the project and create a new [pull request]("../../pulls") to include a new branch for your feature contribution.
+
+*If you don't see something that you'd like integrated, please create a new [issue]("../../issues/new") or fork the project and create a new [pull request]("../../pulls") to include a new branch for your feature contribution.*
 
 ---
 
