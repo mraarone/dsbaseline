@@ -118,8 +118,8 @@ If you mess something up, blow away the Codespace and start a new one. No harm n
 ```mermaid
 flowchart LR
     A[Generation] --> B(DE: Ingest) --> C(DE: Transform) --> D(DE: Load) --> E(DE/BA: Analyze) --> G(DE: Data Model)
-    H -->|Move Code to Source Code Package| O(SE/ME: Integrate) --> Q(IT: Deploy) --> R(IT: Operate) --> S(IT/SRE: Monitor) --> S
-    H --> P(SE/ME: Microservice) -->|Container| Q
+    W -->|Move Code to Source Code Package| O(SE/ME: Integrate) --> Q(IT: Deploy) --> R(IT: Operate) --> S(IT/SRE: Monitor) --> S
+    W --> P(SE/ME: Microservice) -->|Container| Q
     R --> U(Collect Data) --> B
     E --> T(BA: Report)
     B --> D
