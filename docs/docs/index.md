@@ -121,7 +121,7 @@ flowchart LR
     G --> H(DS: Train/Test/Validate) --> I(DS: Report)
     H -->|Move Code to Source Code Package| O(SE/ME: Integrate) & P(SE/ME: Microservice) -->|Container| Q(IT: Deploy) --> R(IT: Operate) --> S(IT/SRE: Monitor)
     S --> S
-    E --> I
+    E --> T(BA: Report)
     B --> D
     D --> C
     D --> J[Data: Store]
