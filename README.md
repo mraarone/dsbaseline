@@ -32,23 +32,25 @@ In addition, if you choose to copy all of the branches when creating your reposi
 
 ### Requirements to use the cookiecutter template
 
-1. Github
+1. Github account
 1. Python 3.8+
-1. Poetry 1.2.1+
-1. An organization set up for GitHub Codespaces to use the devcontainers OR use the devcontainer in a local docker environment through VSCode and Docker Desktop, et al.
+1. Make (Makefile help for useful commands)
+1. Poetry 1.2.1+ virtual environment manager and dependency / package manager (generated Projects)
+1. A GitHub Organization set up for GitHub Codespaces to use the devcontainers OR use the devcontainer in a local docker environment through VSCode and Docker Desktop, et al.
+1. CoPilot enabled
+1. GitLens account if the extension is desired
+1. Public generated Project to use some of the Open Source tools for free
 
 ### Data Science Baseline Features
 
-- A stellar data science project structure
+- A stellar data science development environment and template project structure
 - Mini X-Windows Server, Fluxbox (VNC)
-- NoVNC web VNC Interface
+- NoVNC web VNC Interface (Port 6080, automatic)
 - Docker-in-Docker (single container, does not use GitHub for more container resources)
-- Kubernetes (only bills for one codespace, a trick to save money)
-- Minikube
-- Helm
+- Minikube + Kubernetes + Helm (only bills for one codespace, a trick to save money)
 - Bash with Oh-My-Bash
-- A glorious Zshell (zsh) custom default terminal via my [dotfiles](https://github.com/mraarone/dotfiles)
-- Copilot Plugin as an AI assistant for writing code
+- A glorious Zshell (zsh) custom terminal via my [dotfiles](https://github.com/mraarone/dotfiles)
+- Copilot Plugin as an AI assistant for writing code, don't look syntax up, write a comment in English and let CoPilot get you a solid start
 - Mintly Plugin for AI generated documentation from code
 - Many other extensions (Gitlens, Markup linting, Yaml linting, Sonarcube + Bandit + Safety security linting and scans, Mypy + Pytype type linting, PEP8 correction with Black + Yapf, PEP8 linting with Flake8 and PyLance, License checks with Liccheck, PyTest testing, Pre-commit + Nox testing, etc.)
 - Unit test code coverage scans
@@ -56,6 +58,9 @@ In addition, if you choose to copy all of the branches when creating your reposi
 - DevSecOps pipeline defined by a Noxfile
 - DevSecOps pipeline defined by a pre-commit hook definition
 - DevSecOps configuration for VSCode using py-utils matching Microsoft's open source configuration
+- Continual documentation using mkdocs (Project Template)
+- Continual documentation using sphinx (generated Projects)
+- Branches contain common Data Science examples for rapidly starting new projects without the fuss
 - Recommend copying my [dotfiles](https://github.com/mraarone/dotfiles) into your account for a massively customized ZSH experience
 
 ### The resulting directory structure
