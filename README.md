@@ -40,17 +40,18 @@ In addition, if you choose to copy all of the branches when creating your reposi
 ### Data Science Baseline Features
 
 - A stellar data science project structure
-- NoVNC
-- Fluxbox (VNC)
-- kubernetes
-- minikube
-- helm
-- docker-in-docker retained inside a single Codespace to keep costs and infrastructure simple.
+- Mini X-Windows Server, Fluxbox (VNC)
+- NoVNC web VNC Interface
+- Docker-in-Docker (single container, does not use GitHub for more container resources)
+- Kubernetes (only bills for one codespace, a trick to save money)
+- Minikube
+- Helm
 - Bash with Oh-My-Bash
 - A glorious Zshell (zsh) custom default terminal via my [dotfiles](https://github.com/mraarone/dotfiles)
 - Copilot Plugin as an AI assistant for writing code
 - Mintly Plugin for AI generated documentation from code
-- Many other extensions (Gitlens, Markup linting, Yaml linting, Sonarcube + Bandit security linting, Mypy + Pytype type linting, PEP8 correction with Black + Yapf, PEP8 linting with Flake8 and PyLint, PyTest testing, Pre-commit + Nox testing, etc.)
+- Many other extensions (Gitlens, Markup linting, Yaml linting, Sonarcube + Bandit + Safety security linting and scans, Mypy + Pytype type linting, PEP8 correction with Black + Yapf, PEP8 linting with Flake8 and PyLance, License checks with Liccheck, PyTest testing, Pre-commit + Nox testing, etc.)
+- Unit test code coverage scans
 - Security is shifted left into the Progressive Web App VSCode IDE via linters and live code scanners
 - DevSecOps pipeline defined by a Noxfile
 - DevSecOps pipeline defined by a pre-commit hook definition
