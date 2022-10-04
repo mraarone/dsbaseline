@@ -113,7 +113,7 @@ At the time of this writing, GitHub Codespaces cost $0.18 USD / hour for the 2 c
 
 If you mess something up, blow away the Codespace and start a new one. No harm no fowl, just make sure you commit and push your code changes you want to keep.
 
-### A Reasonable Data Science Workflow for Rapid Iteration
+### An End-to-End Data Science Workflow for Rapid Iteration
 
 ```mermaid
 flowchart LR
