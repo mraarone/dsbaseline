@@ -33,13 +33,13 @@ In addition, if you choose to copy all of the branches when creating your reposi
 ### Requirements to use the cookiecutter template
 
 1. Github
-1. Python 3.9+
-1. An organization set up for GitHub Codespaces to use the devcontainers (local devcontainers still being tested, but as of this writing, the devcontainers work with GitHub Codespaces
+1. Python 3.8+
+1. Poetry 1.2.1+
+1. An organization set up for GitHub Codespaces to use the devcontainers OR use the devcontainer in a local docker environment through VSCode and Docker Desktop, et al.
 
 ### Data Science Baseline Features
 
 - A stellar data science project structure
-- Python 3.8
 - NoVNC
 - Fluxbox (VNC)
 - kubernetes
