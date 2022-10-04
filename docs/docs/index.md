@@ -115,6 +115,7 @@ If you mess something up, blow away the Codespace and start a new one. No harm n
 
 ### A Reasonable Data Science Workflow for Rapid Iteration
 
+```mermaid
 flowchart LR
     A[Data: Generation] --> B(Data: Ingest) --> C(Data: Transform) --> D(Data: Load) --> E(Data: Explore) --> F(Data: Explore) --|Move Code to Source Code Package|> G(Data: Model) --> H(Data: Model) -- I(Data: Report)
     B --> D
@@ -127,12 +128,15 @@ flowchart LR
     B --> C{Decision}
     C -->|One| D[Result one]
     C -->|Two| E[Resulme t two]
+```
 
+```mermaid
 flowchart LR
     A[Hard edge] -->|Link text| B(Round edge)
     B --> C{Decision}
     C -->|One| D[Result one]
     C -->|Two| E[Result two]
+```
 
 1. Follow a naming convention that shows the owner and the order the analysis was done in. We use the format `<step>-<ghuser>-<description>.ipynb` (e.g., `0.3-bull-visualize-distributions.ipynb`).
 
