@@ -119,7 +119,8 @@ If you mess something up, blow away the Codespace and start a new one. No harm n
 flowchart LR
     A[Generation] --> B(Data: Ingest) --> C(Data: Transform) --> D(Data: Load) --> E(DS/BA: Explore) --> G(DS:Model)
     G --> H(DS: Train/Test/Validate) --> I(DS: Report)
-    H -->|Move Code to Source Code Package| O(SE/ME: Integrate) & P(SE/ME: Microservice) -->|Container| Q(IT: Deploy) --> R(IT: Operate) --> S(IT/SRE: Monitor) --> S
+    H -->|Move Code to Source Code Package| O(SE/ME: Integrate) --> Q(IT: Deploy) --> R(IT: Operate) --> S(IT/SRE: Monitor) --> S
+    H --> P(SE/ME: Microservice) -->|Container| Q
     R --> U(Collect Data) --> B
     E --> T(BA: Report)
     B --> D
