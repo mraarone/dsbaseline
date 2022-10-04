@@ -47,9 +47,11 @@ In addition, if you choose to copy all of the branches when creating your reposi
 - helm
 - docker-in-docker retained inside a single Codespace to keep costs and infrastructure simple.
 - Bash with Oh-My-Bash
+- A glorious Zshell (zsh) custom default terminal 
 - Copilot Plugin as an AI assistant for writing code
 - Mintly Plugin for AI generated documentation from code
-- Many other extensions (Gitlens, Markup linting, Yaml linting, Sonarcube security linting, etc.)
+- Many other extensions (Gitlens, Markup linting, Yaml linting, Sonarcube + Bandit security linting, Mypy + Pytype type linting, PEP8 correction with Black + Yapf, PEP8 linting with Flake8 and PyLint, PyTest testing, Pre-commit + Nox testing, etc.)
+- Security is shifted left into the Progressive Web App VSCode IDE via linters and live code scanners
 - DevSecOps pipeline defined by a Noxfile
 - DevSecOps pipeline defined by a pre-commit hook definition
 - DevSecOps configuration for VSCode using py-utils matching Microsoft's open source configuration
