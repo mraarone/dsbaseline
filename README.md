@@ -47,7 +47,7 @@ In addition, if you choose to copy all of the branches when creating your reposi
 - helm
 - docker-in-docker retained inside a single Codespace to keep costs and infrastructure simple.
 - Bash with Oh-My-Bash
-- A glorious Zshell (zsh) custom default terminal 
+- A glorious Zshell (zsh) custom default terminal via my [dotfiles](https://github.com/mraarone/dotfiles)
 - Copilot Plugin as an AI assistant for writing code
 - Mintly Plugin for AI generated documentation from code
 - Many other extensions (Gitlens, Markup linting, Yaml linting, Sonarcube + Bandit security linting, Mypy + Pytype type linting, PEP8 correction with Black + Yapf, PEP8 linting with Flake8 and PyLint, PyTest testing, Pre-commit + Nox testing, etc.)
