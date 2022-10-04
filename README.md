@@ -14,7 +14,7 @@
 1. You'll see your project with most of the scaffolding gone.
 1. Click the branches dropdown.
 1. Select and merge each feature branch you want to include in your project.
-1. Head over to the Actions tab and run the "Finalize Setup" workflow to clean up your new project.
+1. Head over to the Actions tab and run the "Finalize Setup" workflow to clean up any remaining scaffolding artifacts from your new project.
 
 *If you don't see something that you'd like integrated, please create a new [issue]("../../issues/new") or fork the project and create a new [pull request]("../../pulls") to include a new branch for your feature contribution.*
 
