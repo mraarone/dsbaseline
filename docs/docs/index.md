@@ -117,7 +117,7 @@ If you mess something up, blow away the Codespace and start a new one. No harm n
 
 ```mermaid
 flowchart LR
-    A[Generation] --> B(DE: Ingest) --> C(DE: Transform) --> D(DE: Load) --> E(DS/BA: Explore) --> G(DE: Data Model)
+    A[Generation] --> B(DE: Ingest) --> C(DE: Transform) --> D(DE: Load) --> E(DE/BA: Analyze) --> G(DE: Data Model)
     H -->|Move Code to Source Code Package| O(SE/ME: Integrate) --> Q(IT: Deploy) --> R(IT: Operate) --> S(IT/SRE: Monitor) --> S
     H --> P(SE/ME: Microservice) -->|Container| Q
     R --> U(Collect Data) --> B
@@ -125,11 +125,12 @@ flowchart LR
     B --> D
     D --> C
     D --> J[DE: Store]
+    C --> J
     J <--> L[DE/DS: Version]
     J --> N[DS: Feature Store]
-    J --> K[DE: Catalog]
-    J --> M[DE: Mart]
-    N --> V(DS: Model) --> H(DS: Train/Test/Validate) --> I(DS: Report)
+    J --> K[DE: Catalog] --> E
+    J --> M[DE: Mart] --> E
+    N --> V(DS: Explore) --> W(DS: Model) --> I(DS: Report)
 ```
 
 1. Follow a naming convention that shows the owner and the order the analysis was done in. We use the format `<step>-<ghuser>-<description>.ipynb` (e.g., `0.3-bull-visualize-distributions.ipynb`).
