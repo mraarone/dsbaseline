@@ -1,1 +1,1 @@
-[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/mraarone/dsbaseline/{cookiecutter.repo_name}/notebooks/notebook.ipynb)]
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/mraarone/dsbaseline/{cookiecutter.repo_name}/notebooks/notebook.ipynb)
