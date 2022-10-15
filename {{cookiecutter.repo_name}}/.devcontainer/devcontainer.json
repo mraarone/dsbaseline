@@ -1,0 +1,94 @@
+{
+  "name": "{{cookiecutter.project_name}}",
+
+  // Update the 'dockerFile' property if you aren't using the standard 'Dockerfile' filename.
+  "build": {
+    "dockerfile": "Dockerfile"
+
+    // [Optional] You can use build args to set options. e.g. 'VARIANT' below affects the Python image in the Dockerfile
+    //"args": { "VARIANT": "3" }
+  },
+  "runArgs": [
+    "--shm-size=1g",
+    "--init",
+    "--privileged"
+  ],
+	"mounts": [
+		"source=minikube-var-lib-docker,target=/var/lib/docker,type=volume",
+		"source=minikube-config,target=/home/vscode/.minikube,type=volume"
+	],
+  "overrideCommand": false, // Note, this only won't crash if ENTRYPOINT is set in Dockerfile.
+  "postCreateCommand": ".devcontainer/postCreateCommand.sh",
+  "postStartCommand": "nohup bash -c 'minikube start &' > minikube.log 2>&1",
+  //"postStartCommand": "bash -c 'minikube start &' > minikube.log 2>&1",
+
+  // Configure tool-specific properties.
+  "customizations": {
+    // Configure properties specific to VS Code.
+    "vscode": {
+      // Set *default* container specific settings.json values on container create.
+      "settings": {
+        "python.defaultInterpreterPath": "/usr/local/bin/python",
+        "python.linting.enabled": true,
+        "python.linting.pylintEnabled": true,
+        "python.formatting.autopep8Path": "/usr/local/py-utils/bin/autopep8",
+        "python.formatting.blackPath": "/usr/local/py-utils/bin/black",
+        "python.formatting.yapfPath": "/usr/local/py-utils/bin/yapf",
+        "python.linting.banditPath": "/usr/local/py-utils/bin/bandit",
+        "python.linting.flake8Path": "/usr/local/py-utils/bin/flake8",
+        "python.linting.mypyPath": "/usr/local/py-utils/bin/mypy",
+        "python.linting.pycodestylePath": "/usr/local/py-utils/bin/pycodestyle",
+        "python.linting.pydocstylePath": "/usr/local/py-utils/bin/pydocstyle",
+        "python.linting.pylintPath": "/usr/local/py-utils/bin/pylint",
+        "python.testing.pytestPath": "/usr/local/py-utils/bin/pytest"
+      },
+
+      // Add the IDs of extensions you want installed when the container is created.
+      "extensions": [
+        "ms-python.python",
+        "ms-python.vscode-pylance",
+        "mechatroner.rainbow-csv",
+        "oderwat.indent-rainbow",
+        "SonarSource.sonarlint-vscode",
+        "ms-vscode.makefile-tools",
+        "redhat.vscode-yaml",
+        "GitHub.copilot",
+        "ms-vscode-remote.remote-containers",
+        "chrisdias.vscode-opennewinstance",
+        "mads-hartmann.bash-ide-vscode",
+        "rogalmic.bash-debug",
+        "streetsidesoftware.code-spell-checker",
+        "ms-azuretools.vscode-docker",
+        "ms-kubernetes-tools.vscode-kubernetes-tools",
+        "eamodio.gitlens",
+        "JHeilingbrunner.vscode-gnupg-tool",
+        "hashicorp.hcl",
+        "bierner.markdown-mermaid",
+        "DavidAnson.vscode-markdownlint",
+        "mintlify.document",
+        "luisfontes19.vscode-swissknife",
+        "ms-toolsai.jupyter",
+        "ms-toolsai.jupyter-renderers"
+      ]
+    }
+  },
+
+	"forwardPorts": [6080],
+
+	"portsAttributes": {
+		"6080": {
+			"label": "Desktop access (password: vscode)",
+			"onAutoForward": "silent"
+		},
+		"5901": {
+			"label": "VNC TCP port (password: vscode)",
+			"onAutoForward": "silent"
+		}
+	},
+
+  "hostRequirements": {
+		"memory": "8gb"
+	},
+
+  "remoteUser": "node"
+}
