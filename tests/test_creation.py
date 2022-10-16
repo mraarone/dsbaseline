@@ -83,6 +83,9 @@ class TestCookieSetup(object):
 
     def test_folders(self):
         expected_dirs = [
+            '.devcontainer',
+            '.devcontainer/fluxbox',
+            '.devcontainer/library-scripts',
             'data',
             'data/external',
             'data/interim',
